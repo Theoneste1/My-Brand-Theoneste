@@ -12,22 +12,11 @@ body{
   box-sizing: border-box;
 }
 
-.Menu-icon{
-  display: inline-block;
-}
-.Menu-icon .bar1, .bar2,.bar3{
-  width: 35px;
-  height: 5px;
-  background-color:white;
-  margin: 6px 0;
-  transition: 0.4s;
-}
-
 .container{
-  height: 80vh;
+  height: 70vh;
 }
 .inner-container{
-  height: 100%;
+  height: 90%;
   margin-left: auto;
   margin-right: auto;
   padding: 0;
@@ -100,7 +89,7 @@ header nav li a{
 }
 
 .form-container{
- width: 70%;
+ width: 90%;
 }
 .form{
   width: 90%;
@@ -110,7 +99,7 @@ header nav li a{
 
 }
 .inner-form{
-  width: 70%;
+  width: 90%;
 
 }
 
@@ -151,17 +140,20 @@ button{
 /*footer styling here*/
 
 .last-part{
- height: 20vh;
+ height: 30vh;
 }
 
 /*footer styling*/
 .footer{
-  margin: 0;
+  margin-top: 10px;
   padding: 0;
   background-color: #1B242F;
   display: flex;
   justify-content: center;
   align-items:center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
  height:20vh;
 }
 
@@ -173,7 +165,7 @@ button{
   justify-content: center;
 }
 .myName{
-  width: 98%;
+  width: 100%;
   margin-top: 20px;
   text-align: center;
   color: #4D5763;
@@ -191,42 +183,113 @@ button{
   text-decoration: none;
 }
 
-@media only screen  and (max-width: 768px) {
+@media only screen  and (max-width: 700px) {
 
     nav ul{
-      display: none;
+      /* display: none; */
       width: 0px;
       height:0px;
     }
-}
-
-@media only screen  and (min-width: 769px) {
-
-    .menu-icon{
-      display: none;
-      width: 0px;
-      height:0px;
-    }
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
- font-size: 16px;
-  font-family: Bell MT;
-}
-
-
-.fa {
-  padding: 5px 10px;
-  margin:0 5px;
-  text-decoration: none;
-}
 
 .form-container{
- width: 250px;
+ width: 80%;
 }
-.footer{
-  margin-top: 50px;
+.form{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
+.inner-form{
+  width: 100%;
+
+}
+
+.form textarea, input{
+  background-color:#1E242C;
+  margin-top: 5px;
+  width: 98%;
+  border-radius: 5px;
+  color:white;
+  padding-left: 10px;
+  border-width: 0px;
+}
+
+
+
+}
+/*responsive for iPad prod and other kind of Ipad */
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+
+    body{
+    margin: 0;
+    padding:0;
+    }
+
+    *{
+      font-size: 30px;
+      margin: 0;
+      padding: 0;
+      box-sizing:border-box;
+    }
+
+    .container{
+  height: 60vh;
+}
+.inner-container{
+  height: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+  margin: 0;
+}
+
+
+    .form-container{
+ width: 80%;
+}
+.form{
+   padding-top: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.inner-form{
+  width: 100%;
+
+}
+
+.form textarea, input{
+  background-color:#1E242C;
+  margin-top: 5px;
+  width: 98%;
+  border-radius: 5px;
+  color:white;
+  padding-left: 10px;
+  border-width: 0px;
+}
+
+.section-part{
+  padding:30px 0;
+}
+
+.contact h1{
+  color: white;
+  text-align: center;
+  padding:50px 0;
+  font-size: 24px;
+  text-decoration-style: solid;
+  text-decoration: underline;
+}
+.contact p{
+  color: #09C2C9;
+  padding-top: 30px;
+  text-align: center;
+}
+
+
 }
