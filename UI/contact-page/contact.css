@@ -28,20 +28,35 @@ body{
 
 /*Navigation bar style*/
 header{
-  width: 100%;
+  height: 12vh;
+  display: flex;
+  align-items:center;
+    background-color:#1B242F;
+  border-bottom: 3px solid #09C2C9;
   top: 0;
 }
+.menuIcon{
+margin-left:30px;
+margin-top: 10px;
+height: 100%;
+}
+.menuIcon .bar1, .bar2, .bar3, .bar4{
+  margin: 3px 0;
+  height: 5px;
+  width: 70px;
+  background-color:white;
+}
+
 header nav{
-min-height: 12vh;
-margin: 0;
-padding: 0;
+/* min-height: 12vh; */
+width: 100%;
 display: flex;
 align-items:center;
-  background-color:#1B242F;
-  border-bottom: 3px solid #09C2C9;
+
 }
 header nav ul{
-  width: 100%;
+  width: 98%;
+  padding-left:10px;
 }
 
 header nav li{
@@ -139,11 +154,6 @@ button{
 
 /*footer styling here*/
 
-.last-part{
- height: 30vh;
-}
-
-/*footer styling*/
 .footer{
   margin-top: 10px;
   padding: 0;
@@ -186,26 +196,54 @@ button{
 @media only screen  and (max-width: 700px) {
 
     nav ul{
-      /* display: none; */
+      display: none;
       width: 0px;
       height:0px;
     }
+    header{
+      height: 12vh;
+      display: block;
+    }
+    .menuIcon{
+      float:right;
+      margin-right: 10px;
+    }
+    ul.myClass {
+    display: block;
+   width: 100%;
+   background-color: #333333;
+   height: 100%;
+   z-index: 100;
+   position: relative;
+
+}
+ ul.myClass li{
+  margin: 5px 0;
+  font-size: 16px;
+  display: block;
+}
+.section-part p, h1{
+  text-align: center;
+}
+.section-part, .form-part{
+  position: fixed;
+  width: 100%;
+}
 
 .form-container{
  width: 80%;
+ margin-top: 500px;
+ position: fixed
 }
 .form{
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 .inner-form{
   width: 100%;
-
 }
-
 .form textarea, input{
   background-color:#1E242C;
   margin-top: 5px;
@@ -216,20 +254,32 @@ button{
   border-width: 0px;
 }
 
-
-
 }
+
+
+@media all and (min-width:1025px) {
+  header .menuIcon{
+      display: none;
+    }
+}
+
 /*responsive for iPad prod and other kind of Ipad */
 
-@media all and (min-width: 768px) and (max-width: 1024px) {
+@media all and (min-width: 701px) and (max-width: 1024px) {
 
     body{
     margin: 0;
     padding:0;
     }
+    header .menuIcon{
+      display: none;
+    }
+     header nav {
+      width: 100%;
+    }
 
     *{
-      font-size: 30px;
+      font-size: 16px;
       margin: 0;
       padding: 0;
       box-sizing:border-box;
@@ -251,7 +301,7 @@ button{
  width: 80%;
 }
 .form{
-   padding-top: 100px;
+   padding-top: 20px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -274,22 +324,32 @@ button{
 }
 
 .section-part{
-  padding:30px 0;
+  padding:10px 0;
 }
 
 .contact h1{
   color: white;
   text-align: center;
-  padding:50px 0;
+  padding:30px 0;
   font-size: 24px;
   text-decoration-style: solid;
   text-decoration: underline;
 }
 .contact p{
   color: #09C2C9;
-  padding-top: 30px;
+  padding-top: 10px;
   text-align: center;
 }
+}
+.button{
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
 
-
+header nav ul .myClass{
+  width: 100%;
+  height: 40px;
 }
