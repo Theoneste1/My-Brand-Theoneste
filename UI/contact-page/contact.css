@@ -107,7 +107,7 @@ header nav li a{
  width: 90%;
 }
 .form{
-  width: 90%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,7 +121,7 @@ header nav li a{
 .form textarea, input{
   background-color:#1E242C;
   margin-top: 5px;
-  width: 98%;
+  width: 100%;
   border-radius: 5px;
   color:white;
   padding-left: 10px;
@@ -261,6 +261,10 @@ button{
   header .menuIcon{
       display: none;
     }
+    .inner-form{
+  width: 600px;
+
+}
 }
 
 /*responsive for iPad prod and other kind of Ipad */
