@@ -152,6 +152,11 @@ button{
 
 }
 
+button:hover{
+  background-color:#09C2C9;
+  cursor: pointer;
+}
+
 /*footer styling here*/
 
 .footer{
@@ -164,7 +169,7 @@ button{
   width: 100%;
   position: fixed;
   bottom: 0;
- height:20vh;
+ height:15vh;
 }
 
 
