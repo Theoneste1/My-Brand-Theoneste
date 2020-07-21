@@ -23,10 +23,13 @@ section{
     margin-top: 20px;
 }
 .text{
-    font-size: 40px;
     color: white;
  text-align: center;
+ font-size: larger;
  list-style: none;
+}
+.text li, #myName{
+    font-size: 35px;
 }
 
 #myName{
@@ -47,13 +50,11 @@ section{
 }
 #btn-one:hover{
     background-color:#05C2C9;
+    cursor: pointer;
 }
 
 
-@media  screen and (max-width: 768px){
-    .text{
-        font-size: 16px;
-    }
+@media  screen and (max-width: 700px){
 
     #btn-one{
     font-size: 12px;
@@ -62,6 +63,10 @@ section{
     color: white;
     border-radius: 10px;
    border: solid white 1px;
+}
+.text li, #myName{
+
+    font-size: 20px;
 }
 
 }
