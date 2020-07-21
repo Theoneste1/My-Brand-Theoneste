@@ -135,6 +135,9 @@ input[type=text]{
 textarea,button, input:focus{
   outline: 0;
 }
+textarea{
+  resize: none;
+}
 
 .button{
   width: 100%;
