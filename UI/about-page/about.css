@@ -184,6 +184,11 @@ h2{
   flex-direction: column;
 }
 
+p a{
+  text-decoration: none;
+  color:#05C2C9;
+}
+
 .thecourses-skills{
    display: flex;
    justify-content: center;
