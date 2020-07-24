@@ -23,7 +23,6 @@ let loginLink = document.querySelector('#loginLink')
 let registerLink = document.querySelector('#RegisterLink')
 
 let formTex=document.querySelector("#form-body")
-// let loginForm = document.querySelector('.loginform')
 loginLink.addEventListener('click', () => {
     loginbtn();
     console.log("login");
@@ -40,7 +39,7 @@ function loginbtn() {
         loginForm.style.display = "block";
         loginForm.style.opacity = "0.6";
         formTex.style.display = "none";
-        loginButtonId.style.backgroundColor = "#BD2060";
+        loginButtonId.style.backgroundColor = "#09C2C9";
     })
 }
 loginbtn()
@@ -51,7 +50,7 @@ function registerbtn() {
         clearGround()
         registerForm.style.display = "block";
         registerForm.style.opacity = "0.6";
-        registerButtonId.style.backgroundColor = "#BD2060";
+        registerButtonId.style.backgroundColor = "#09C2C9";
         formTex.style.display = "none";
     })
 }

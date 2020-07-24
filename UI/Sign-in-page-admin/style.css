@@ -1,28 +1,404 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+   font-family: 'Poppins', 'sans-serif';
+  font-size: 16px;
+}
+
 body{
- background: #252934;
+  background-color: #252934;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  height: 70vh;
+}
+.inner-container{
+  height: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  margin: 0;
+}
+.all-parts{
+  width: 100%;
+}
+
+/*Navigation bar style*/
+header{
+  height: 12vh;
+  display: flex;
+  align-items:center;
+    background-color:#1B242F;
+  border-bottom: 3px solid #09C2C9;
+  top: 0;
+}
+.menuIcon{
+margin-left:30px;
+margin-top: 10px;
+height: 100%;
+}
+.menuIcon .bar1, .bar2, .bar3, .bar4{
+  margin: 3px 0;
+  height: 5px;
+  width: 70px;
+  background-color:white;
+}
+
+header nav{
+/* min-height: 12vh; */
+width: 100%;
+display: flex;
+align-items:center;
+
+}
+header nav ul{
+  width: 98%;
+  padding-left:10px;
+}
+
+header nav li{
+  margin: 0 20px;
+  display: inline;
+}
+header nav li a{
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/* .active{
+  color: #BD2060;
+} */
+
+/*sectionn style*/
+
+
+.section-part{
+  padding:30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button a{
+    text-decoration: none;
+    color:white;
+}
+#orthing{
+    color :#09C2C9;
+    margin: 0 10px;
+}
+.orthing{
+    margin: 0 30px ;
+    color :#09C2C9;
+}
+#form-body{
+   width: 100%;
+   text-align: center;
+
+}
+
+#form-body li{
+
+    list-style: none;
+    color:white;
+    font-size: 20px;
+}
+p, h1{
+      text-align: center;
+        margin-top: 10px;
+      color:white;
 }
 
 
-.paragraph{
+
+/*form part style*/
+.form-part{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.form-container{
+ width: 100%;
+ background-color:black;
+ border: solid  #09C2C9 2px;
+ /* opacity: 0.6; */
+ border-radius:10px;
+ padding: 20px;
+}
+.form{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.inner-form{
     width: 100%;
-    margin-top: 20px;
-    margin-bottom: 20px;
+
 }
-.paragraph li{
-  list-style-type:none;
+.all-fom-things{
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+
+.form textarea, input{
+  background-color:#1E242C;
+  margin-top: 5px;
+  width: 100%;
+  border-radius: 5px;
+  color:white;
+  padding-left: 10px;
+  border-width: 0px;
+}
+
+input[type=text]{
+  height: 30px;
+}
+input[type=password]{
+  height: 30px;
+}
+#passforget, #RegisterLink,#loginLink{
+    color:#09C2C9;
+}
+#passforget:hover, #RegisterLink:hover,#loginLink:hover{
+    color:#E31B6D;
+    opacity: 0.6;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+button, input:focus{
+  outline: 0;
+}
+
+
+.button{
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+button{
+  color: white;
+  background-color: #252934;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: white solid 1px;
+
+}
+
+button:hover{
+  background-color:#09C2C9;
+  cursor: pointer;
+}
+
+/*footer styling here*/
+
+.footer{
+  margin-top: 10px;
+  background-color: #1B242F;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  width: 100%;
+  position: fixed;
+  padding-top: 10px;
+  bottom: 0;
+ height:10vh;
+}
+
+
+.socialMedia-contact{
+  width:98%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.myName{
+  width: 100%;
+  margin-top: 10px;
   text-align: center;
+  color: #4D5763;
 }
-.paragraph li, .paragraph .active{
-    font-size: 25px;
+#copy{
+  color: #09C2C9;
 }
 
-
-
-
+.fa {
+  color: white;
+  background-color: #262F38;
+  text-align: center;
+  padding: 5px 10px;
+  margin:0 5px;
+  text-decoration: none;
+}
 
 @media only screen  and (max-width: 700px) {
 
-.paragraph li, .paragraph .active{
-    font-size: 16px;
+    nav ul{
+      display: none;
+      width: 0px;
+      height:0px;
+    }
+    header{
+      height: 12vh;
+      display: block;
+    }
+    .menuIcon{
+      float:right;
+      margin-right: 10px;
+    }
+    ul.myClass {
+    display: block;
+   width: 100%;
+   background-color: #333333;
+   height: 100%;
+   z-index: 100;
+   position: relative;
+
 }
+ ul.myClass li{
+  margin: 5px 0;
+  font-size: 16px;
+  display: block;
+}
+.section-part p, h1{
+  text-align: center;
+}
+.section-part, .form-part{
+  position: fixed;
+  width: 100%;
+}
+
+.form-container{
+ width: 50%;
+ margin-top: 100px;
+/* margin-left: -160px; */
+margin-left: -30%;
+ position: fixed
+}
+.form{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inner-form{
+  width: 100%;
+}
+.form textarea, input{
+  background-color:#1E242C;
+  margin-top: 5px;
+  width: 100%;
+  border-radius: 5px;
+  color:white;
+  padding-left: 10px;
+  border-width: 0px;
+}
+
+}
+
+
+@media all and (min-width:1024px) {
+  header .menuIcon{
+      display: none;
+    }
+    .inner-form{
+  width: 100%
+
+}
+*{
+  font-size: 16px;
+}
+}
+
+/*responsive for iPad prod and other kind of Ipad */
+
+@media all and (min-width: 701px) and (max-width: 1023px) {
+
+    body{
+    margin: 0;
+    padding:0;
+    }
+    header .menuIcon{
+      display: none;
+    }
+     header nav {
+      width: 100%;
+    }
+
+    *{
+      font-size: 16px;
+      margin: 0;
+      padding: 0;
+      box-sizing:border-box;
+    }
+
+    .container{
+  height: 60vh;
+}
+.inner-container{
+  height: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+  margin: 0;
+}
+
+
+.form-container{
+ width: 100%;
+}
+.form{
+   padding-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.inner-form{
+  width: 100%;
+
+}
+
+.form  input{
+  background-color:#1E242C;
+  margin-top: 5px;
+  width: 98%;
+  border-radius: 5px;
+  color:white;
+  padding-left: 10px;
+  border-width: 0px;
+}
+
+.section-part{
+  padding:10px 0;
+}
+
+}
+.button{
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+
+header nav ul .myClass{
+  width: 100%;
+  height: 40px;
 }
