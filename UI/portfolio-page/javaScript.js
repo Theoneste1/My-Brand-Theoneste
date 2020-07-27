@@ -1,17 +1,4 @@
-// javascript for humburger icon
 
-const menuIcons = document.querySelector('.menuIcon');
-const menubar = document.querySelector('header ul')
-
-menubar.addEventListener('click', () => {
-
-})
-
-menuIcons.addEventListener('click', () => {
-
-    menubar.classList.toggle('myClass')
-
-});
 
 // getting all the projects
 const allProjects = document.querySelectorAll('.image')
@@ -30,8 +17,10 @@ const rubyprojects = document.querySelectorAll('.ruby')
 
 // project title
 const projectsTitle = document.querySelectorAll(".all")
-projectsTitle[0].style.backgroundColor = "#E31C6E";
+projectsTitle[0].style.backgroundColor = "#55C1C1";
+projectsTitle[0].style.textDecoration = "underline"
 projectsTitle[0].style.color = "white";
+projectsTitle[0].style.textAlign = "center";
 
 // by default
 for (i = 1; i < projectsTitle.length; i++) {
@@ -43,6 +32,7 @@ for (i = 1; i < projectsTitle.length; i++) {
 function makeSameBackground() {
     projectsTitle.forEach(title => {
         title.style.backgroundColor = "#F5F5F5";
+        title.style.textDecoration = "none"
         title.style.color = "#626262";
     });
 }
@@ -53,7 +43,8 @@ function makeSameBackground() {
 function makeClickColor() {
     projectsTitle.forEach(title => {
         title.addEventListener('click', () => {
-            title.style.backgroundColor = "#E31C6E";
+            title.style.textDecoration = "underline"
+            title.style.backgroundColor = "#55C1C1";
             title.style.color = "white"
         })
     })
@@ -66,7 +57,7 @@ function changeColor() {
     setTimeout(() => {
         makeClickColor()
 
-    }, 1000);
+    }, 1);
 
     makeSameBackground()
 }
@@ -85,8 +76,9 @@ projectsTitle.forEach(title => {
 
         if (title.classList[1] === "javascriptprojects") {
             // chenge the background color
-            title.style.backgroundColor = "#E31C6E";
-            title.style.color = "white"
+            title.style.backgroundColor = "#55C1C1";
+            title.style.color = "white";
+            title.style.textDecoration = "underline";
 
             // hide the ruby projects
             rubyprojects.forEach(project => {
@@ -105,7 +97,8 @@ projectsTitle.forEach(title => {
         // selecting react projects
         else if (title.classList[1] === "reactsprojects") {
             // chenge the background color
-            title.style.backgroundColor = "#E31C6E";
+            title.style.backgroundColor = "#55C1C1";
+            title.style.textDecoration = "underline";
             title.style.color = "white"
 
             // hide the ruby projects
@@ -128,7 +121,7 @@ projectsTitle.forEach(title => {
         // selecting ruby projects
         else if (title.classList[1] === "rubyprojects") {
             // chenge the background color
-            title.style.backgroundColor = "#E31C6E";
+            title.style.backgroundColor = "#55C1C1";
             title.style.color = "white"
 
             // hide the ruby projects
@@ -147,12 +140,12 @@ projectsTitle.forEach(title => {
         }
         // getting all projects
 
-
         // selecting ruby projects
         else if (title.classList[1] === "allprojects") {
             // chenge the background color
-            title.style.backgroundColor = "#E31C6E";
+            title.style.backgroundColor = "#55C1C1";
             title.style.color = "white"
+            title.style.textDecoration = "underline"
 
             // show the ruby projects
             reactProjects.forEach(project => {
