@@ -1,18 +1,3 @@
-// javascript for humburger icon
-
-const menuIcons = document.querySelector('.menuIcon');
-const menubar = document.querySelector('header ul')
-
-menubar.addEventListener('click', () => {
-
-})
-
-menuIcons.addEventListener('click', () => {
-
-    menubar.classList.toggle('myClass')
-
-});
-
 
 // getting all bloged
 const blogedBlog = document.querySelectorAll('.bloged')
@@ -20,15 +5,17 @@ blogedBlog.forEach(blog => {
 
     // change the color of text area
     blog.addEventListener("mouseover", () => {
-        console.log(blog.children[blog.children.length - 2].innerText)
-        blog.children[blog.children.length - 2].style.color = "#09C2C9";
+        console.log(blog.children[blog.children.length - 4].innerText)
+        blog.children[blog.children.length - 4].style.backgroundColor = "#626262"
+        // blog.children[blog.children.length - 4].style.color = "white";
         blog.style.cursor = "pointer";
 
     })
     // return the text to normal
     blog.addEventListener("mouseout", () => {
-        console.log(blog.children[blog.children.length - 2].innerText)
-        blog.children[blog.children.length - 2].style.color = "#626262";
+        console.log(blog.children[blog.children.length - 4].innerText)
+        // blog.children[blog.children.length - 4].style.color = "#626262";
+        blog.children[blog.children.length - 4].style.backgroundColor = "#adbbc7"
     })
 })
 
