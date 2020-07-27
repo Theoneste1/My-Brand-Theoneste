@@ -1,72 +1,28 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-section{
-    background-color:#252934;
-}
- .container, .button {
-    display: flex;
-    justify-content: center;
-    align-items:center
-}
-.container{
-    height: 100vh;
-}
-.innerpart{
-    width: 98%;
+body{
+ background: #252934;
 }
 
-.button{
+
+.paragraph{
+    width: 100%;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
-.text{
-    color: white;
- text-align: center;
- font-size: larger;
- list-style: none;
+.paragraph li{
+  list-style-type:none;
+  text-align: center;
 }
-.text li, #myName{
-    font-size: 35px;
+.paragraph li, .paragraph .active{
+    font-size: 25px;
 }
 
-#myName{
-    color: #E31B6D;
-}
-#btn-one{
+
+
+
+
+@media only screen  and (max-width: 700px) {
+
+.paragraph li, .paragraph .active{
     font-size: 16px;
-    padding: 10px 20px 10px 30px;
-    background-color: #252934;
-    color: white;
-    border-radius: 10px;
-   border: solid white 1px;
 }
-.fa-arrow-right{
-    color: white;
-    font-size: 20px;
-    margin-left: 10px;
-}
-#btn-one:hover{
-    background-color:#05C2C9;
-    cursor: pointer;
-}
-
-
-@media  screen and (max-width: 700px){
-
-    #btn-one{
-    font-size: 12px;
-    padding: 10px 20px;
-    background-color: #252934;
-    color: white;
-    border-radius: 10px;
-   border: solid white 1px;
-}
-.text li, #myName{
-
-    font-size: 20px;
-}
-
 }
