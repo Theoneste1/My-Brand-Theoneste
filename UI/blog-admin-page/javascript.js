@@ -1,4 +1,4 @@
-// javascript for humburger icon
+//This is javascript// javascript for humburger icon
 
 const menuIcons = document.querySelector('.menuIcon');
 const menubar = document.querySelector('header ul')
@@ -13,30 +13,49 @@ menuIcons.addEventListener('click', () => {
 
 });
 
+let loginForm = document.querySelector('.loginform')
+let loginButtonId = document.querySelector('#loginButtonId ')
+let loginButton = document.querySelector('#loginBtn')
+let registerForm = document.querySelector('.Registerform')
+let registerButton = document.querySelector('#registerButton')
+let registerButtonId = document.querySelector('#registerButtonId')
 
-// getting all bloged
-const blogedBlog = document.querySelectorAll('.bloged')
-blogedBlog.forEach(blog => {
+let formTex = document.querySelector("#form-body")
+// loginLink.addEventListener('click', () => {
+//     loginbtn();
+//     console.log("login");
+// })
 
-    // change the color of text area
-    blog.addEventListener("mouseover", () => {
-        console.log(blog.children[blog.children.length - 2].innerText)
-        blog.children[blog.children.length - 2].style.color = "#09C2C9";
-        blog.style.cursor = "pointer";
 
+function loginbtn() {
+    loginButtonId.addEventListener('click', () => {
+        clearGround();
+        loginForm.style.display = "block";
+        loginForm.style.opacity = "0.6";
+        formTex.style.display = "none";
+        loginButtonId.style.backgroundColor = "#09C2C9";
     })
-    // return the text to normal
-    blog.addEventListener("mouseout", () => {
-        console.log(blog.children[blog.children.length - 2].innerText)
-        blog.children[blog.children.length - 2].style.color = "#626262";
-    })
-})
+}
+loginbtn()
 
-// getting the likes and unlikes
-const actions = document.querySelectorAll(".action .fa");
-actions.forEach(action => {
-    action.addEventListener('click', () => {
-        action.style.color = "#E31C6E";
 
+function registerbtn() {
+    registerButtonId.addEventListener('click', () => {
+        clearGround()
+        registerForm.style.display = "block";
+        registerForm.style.opacity = "0.6";
+        registerButtonId.style.backgroundColor = "#09C2C9";
+        formTex.style.display = "none";
     })
-})
+}
+registerbtn()
+
+
+
+function clearGround() {
+    registerForm.style.display = "none";
+    loginForm.style.display = "none";
+    formTex.style.display = "block";
+    loginButtonId.style.backgroundColor = "#252934";
+    registerButtonId.style.backgroundColor = "#252934";
+}

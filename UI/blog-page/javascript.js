@@ -3,30 +3,29 @@
 const blogedBlog = document.querySelectorAll('.bloged')
 blogedBlog.forEach(blog => {
 
+    let blogTextSummary = blog.children[4];
+
     // change the color of text area
-    blog.addEventListener("mouseover", () => {
-        //console.log(blog.children[blog.children.length - 4].innerText)
-        blog.children[blog.children.length - 4].style.backgroundColor = "#626262"
-        // blog.children[blog.children.length - 4].style.color = "white";
+   blogTextSummary.addEventListener("mouseover", () => {
+       blogTextSummary.style.backgroundColor = "#626262"
         blog.style.cursor = "pointer";
 
     })
     // return the text to normal
-    blog.addEventListener("mouseout", () => {
-        //console.log(blog.children[blog.children.length - 4].innerText)
-        // blog.children[blog.children.length - 4].style.color = "#626262";
-        blog.children[blog.children.length - 4].style.backgroundColor = "#adbbc7"
+   blogTextSummary.addEventListener("mouseout", () => {
+       blogTextSummary.style.backgroundColor = "#adbbc7"
     })
 
     // whatif a blog is clicked
 
-    blog.addEventListener("click", () => {
+   blogTextSummary.addEventListener("click", () => {
         blogedBlog.forEach(otherBlog => {
             if (blog === otherBlog) {
                 blog.style.display = "block";
                 document.querySelector(".secondParagraph").style.display = "block";
                 document.querySelector(".goback").style.display = 'block';
-                blog.style.width = "100%";
+                blog.classList.add("blogDisplay")
+                // document.querySelector(".blogDisplay").style.width = "100%";
             }
             if (blog !== otherBlog) {
                 otherBlog.style.display = "none";
@@ -38,12 +37,18 @@ blogedBlog.forEach(blog => {
 })
 
 
+// clear action
+function clearAction() {
+    document.querySelectorAll(".action .fa")
+        .forEach(element=>element.style.color="black")
+}
 
 
 // getting the likes and unlikes
 const actions = document.querySelectorAll(".action .fa");
-    actions.forEach(action => {
-        action.addEventListener('click', () => {
+actions.forEach(action => {
+    action.addEventListener('click', () => {
+        clearAction();
             action.style.color = "#E31C6E";
 
         })
@@ -54,7 +59,7 @@ const actions = document.querySelectorAll(".action .fa");
 document.querySelector(".goback").addEventListener("click", () => {
     blogedBlog.forEach(anyblog=> {
         anyblog.style.display = 'block';
-        anyblog.style.width = "20%";
+        anyblog.classList.remove("blogDisplay")
         document.querySelector(".goback").style.display = "none";
         document.querySelector(".secondParagraph").style.display = "none";
 
