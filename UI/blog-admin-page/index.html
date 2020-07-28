@@ -4,19 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Theoneste Brand, Admin page</title>
+    <title>Theoneste Brand, Home page</title>
+    <link rel="stylesheet" href="./../../assets/CSS/style.css">
     <link rel="stylesheet" href="./style.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <section>
         <div class="container">
-
             <div class="inner-container">
                 <div class="all-parts">
-                    <!-- upper part-->
+                    <!-- upper part -->
                     <header>
                         <div class="menuIcon">
                             <div class="bar1"></div>
@@ -27,138 +26,109 @@
 
                         <nav>
                             <ul>
-                                <li><a href="../landing-page-admin/index.html">Home</a></li>
-                                <li><a href="../about-page-admin/index.html">About</a></li>
-                                <li><a href="../portfolio-page-admin/index.html">Portfolio</a></li>
-                                <li><a class="active" href="./index.html">Blog</a></li>
-                                <li><a href="../contact-page-admin/index.html">Contact</a></li>
+                                <li><a class="../landing-page/index.html">Home</a></li>
+                                <li><a href="../about-page/index.html">About</a></li>
+                                <li><a href="../portfolio-page/index.html">Portfolio</a></li>
+                                <li><a href="../blog-page/index.html">Blog</a></li>
+                                <li><a href="../contact-page/index.html">Contact</a></li>
+                                <li><a class="active" href="./index.html">Blogs actions</a></li>
                             </ul>
                         </nav>
                     </header>
 
+                    <!--section part  -->
 
+                    <div class="section-part">
+                        <button id="loginButtonId">Add blog</button>
+                        <span class="orthing ">Or</span>
+                        <button id="registerButtonId">Manage blogs</button>
+                    </div>
 
+                    <!-- form  part -->
 
-                    <!-- section part -->
-                    <div class="body-section">
-                        <div class="bodyContainer">
+                    <!-- login -->
 
-                            <section class="blog title">
-                                <h1>BLOG ADMIN</h1>
-                            </section>
+                    <div class=" all-fom-things">
+                        <div class="inner-allforms">
 
-                            <div class="blogs">
-                                <div class="bloged">
-                                    <div class="blog-image">
-                                        <img src="../../assets/js.svg">
-                                    </div>
-                                    <div class="blog-title">
-                                        <h1> Breaking your coder’s block</h1>
-                                    </div>
-                                    <div class="blog-date">
-                                        <p> JULY 23, 2020</p>
-                                    </div>
-                                    <div class="line1"></div>
-                                    <div class="blog-text">
-                                        <p>It is a long established fact that a reader will be distracted
-                                            by the readable content of a page when looking at its
-                                            layout. The point of using Lorem </p>
-                                    </div>
-                                    <div class="action">
-                                        <button>Edit <i class='fas fa-edit'></i></button>
-                                        <button>Delete <i class='fas fa-times'></i></button>
-                                        <button>Update <i class='fas fa-pen'></i></button>
+                            <div style="display: none;" class=" form-part loginform">
+                                <div class="form-container login">
+                                    <div class="form login">
+                                        <div class="inner-form login">
+                                            <input type="text" name="name" placeholder="Topic...">
+                                            <textarea rows="5"></textarea>
+                                        </div>
                                     </div>
 
-                                </div>
-
-                                <div class="bloged">
-                                    <div class="blog-image">
-                                        <img src="../../assets/react5.svg">
-                                    </div>
-                                    <div class="blog-title">
-                                        <h1> Breaking your coder’s block</h1>
-                                    </div>
-                                    <div class="blog-date">
-                                        <p> JULY 23, 2020</p>
-                                    </div>
-                                    <div class="line1"></div>
-                                    <div class="blog-text">
-                                        <p>It is a long established fact that a reader will be distracted
-                                            by the readable content of a page when looking at its
-                                            layout. The point of using Lorem </p>
-                                    </div>
-                                    <div class="action">
-                                        <button>Edit <i class='fas fa-edit'></i></button>
-                                        <button>Delete <i class='fas fa-times'></i></button>
-                                        <button>Update <i class='fas fa-pen'></i></button>
+                                    <div class="button">
+                                        <button id="loginBtn">
+                                            <a href="/#">Publish</a>
+                                        </button>
                                     </div>
                                 </div>
-
-                                <div class="bloged">
-                                    <div class="blog-image">
-                                        <img src="../../assets/js8.svg">
-                                    </div>
-                                    <div class="blog-title">
-                                        <h1> Breaking your coder’s block</h1>
-                                    </div>
-                                    <div class="blog-date">
-                                        <p> JULY 23, 2020</p>
-                                    </div>
-                                    <div class="line1"></div>
-                                    <div class="blog-text">
-                                        <p>It is a long established fact that a reader will be distracted
-                                            by the readable content of a page when looking at its
-                                            layout. The point of using Lorem </p>
-                                    </div>
-                                    <div class="action">
-                                        <button>Edit <i class='fas fa-edit'></i></button>
-                                        <button>Delete <i class='fas fa-times'></i></button>
-                                        <button>Update <i class='fas fa-pen'></i></button>
-                                    </div>
-                                </div>
-
-                                <div class="bloged">
-                                    <div class="blog-image">
-                                        <img src="../../assets/js6.svg">
-                                    </div>
-                                    <div class="blog-title">
-                                        <h1> Breaking your coder’s block</h1>
-                                    </div>
-                                    <div class="blog-date">
-                                        <p> JULY 23, 2020</p>
-                                    </div>
-                                    <div class="line1"></div>
-                                    <div class="blog-text">
-                                        <p>It is a long established fact that a reader will be distracted
-                                            by the readable content of a page when looking at its
-                                            layout. The point of using Lorem </p>
-                                    </div>
-                                    <div class="action">
-                                        <button>Edit <i class='fas fa-edit'></i></button>
-                                        <button>Delete <i class='fas fa-times'></i></button>
-                                        <button>Update <i class='fas fa-pen'></i></button>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="buttonSave addNewBlog">
-                                <button id="newBlog">New Blog <i class='fas fa-plus'></i></button>
                             </div>
 
+                            <div style="display: none;" class=" form-part Registerform">
+                                <div class="form-container Register">
+                                    <div class="form Register">
+                                        <div class="inner-form Register">
+                                            <table>
+                                                <thead>
+                                                    <th>No</th>
+                                                    <th>Title</th>
+                                                    <th colspan="3">Actions</th>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>How technology is changing the things</td>
+                                                        <td> <a class="Edit" href="#">Edit</a> </td>
+                                                        <td> <a class="Update" href="#">Update</a> </td>
+                                                        <td> <a class="Delete" href="#">Delete</a> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>How technology is changing the things</td>
+                                                        <td> <a class="Edit" href="#">Edit</a> </td>
+                                                        <td> <a class="Update" href="#">Update</a> </td>
+                                                        <td> <a class="Delete" href="#">Delete</a> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>How technology is changing the things</td>
+                                                        <td> <a class="Edit" href="#">Edit</a> </td>
+                                                        <td> <a class="Update" href="#">Update</a> </td>
+                                                        <td> <a class="Delete" href="#">Delete</a> </td>
+                                                    </tr>
 
+
+                                                </tbody>
+
+                                            </table>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="form-body">
+                                <li>Hey, please choose from the above button with according to your concern!</li>
+                                <li>Doing so if you think that you are an <span id="orthing"> Admin </span>
+                                    of this page</li>
+                            </div>
 
                         </div>
+
+
                     </div>
+
 
 
                 </div>
             </div>
         </div>
+
     </section>
-
-
-
 
     <footer>
         <div class="footer">
@@ -179,9 +149,8 @@
             </div>
         </div>
     </footer>
-
-
-    <script type="text/javascript" src="./javaScript.js"></script>
+    <script type="text/javascript" src="./javascript.js"></script>
+    <script type="text/javascript" src="../../assets/javascript/javascript.js"></script>
 
 </body>
 
