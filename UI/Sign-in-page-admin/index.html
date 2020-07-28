@@ -31,49 +31,73 @@
                                 <li><a href="../portfolio-page/index.html">Portfolio</a></li>
                                 <li><a href="../blog-page/index.html">Blog</a></li>
                                 <li><a href="../contact-page/index.html">Contact</a></li>
+                                <li><a class="active" href="./index.html">Sign/ Rogin</a></li>
                             </ul>
                         </nav>
                     </header>
 
-                    <!-- section part  -->
-                    <section class="page-title">
-                        <h1>Only Me <span class="active"> && </span> Myself</h1>
-                    </section>
-                    <marquee width="90%" direction="left" height="20px" scrollamount="5">
-                        Elbert hubbard said "One Machine can do the work of fifty Ordinary men, No machine can do the
-                        work of one extraordinary man" <span class="Okay" style='font-size:10px;'>&#10004;</span>
-                    </marquee>
+                    <!--section part  -->
 
-                    <!-- body part -->
-                    <section>
-                        <div class="page-body-part">
-                            <div class="inner-body-part">
-                                <div class="image">
-                                    <img src="../../assets/images/Felix.jpg">
+                    <div class="section-part">
+                            <button id="loginButtonId">Login</button>
+                                <span class="orthing ">Or</span >
+                                <button id="registerButtonId">Sign Up</button>
+                    </div>
+
+                    <!-- form  part -->
+
+                    <!-- login -->
+
+                    <div class=" all-fom-things">
+                        <div class="inner-allforms">
+
+                            <div style="display: none;" class=" form-part loginform">
+                                <div class="form-container login">
+                                    <div class="form login">
+                                        <div class="inner-form login">
+                                            <input type="text" name="name" placeholder="Enter email...">
+                                            <input type="password" name="name" placeholder="Password ...">
+                                        </div>
+                                    </div>
+
+                                    <div class="button">
+                                        <button id="loginBtn">
+                                            <a href="../landing-page-admin/index.html">Confirm</a>
+                                        </button>
+                                    </div>
+                                    <p>Do you forget your passWord? <span id="passforget">Recovery</span></p>
+                                    <p>Don't you have an account? <span id="RegisterLink">Register</span></p>
                                 </div>
-
-                                <div class="paragraph">
-                                    <li>Hello I'm <span class="active"> Theoneste Nsanzabarinda </span> a.k.a
-                                        <span class="active"> Maikoni </span>
-                                    </li>
-                                    <li>Currently, I' m a full stack web developer.</li>
-                                    <li>Kigali, Rwanda.</li>
-                                </div>
-
-                                <div class="btn-bigbtn">
-                                    <button>
-                                        <a href="../../UI/portfolio-page/index.html">
-                                            My Works
-                                            <i class="fa fa-arrow-right"></i>
-                                        </a>
-                                    </button>
-                                </div>
-
-
                             </div>
+
+                            <div style="display: none;" class=" form-part Registerform">
+                                <div class="form-container Register">
+                                    <div class="form Register">
+                                        <div class="inner-form Register">
+                                            <input type="text" name="name" placeholder="Full name...">
+                                            <input type="text" name="name" placeholder="Enter email...">
+                                            <input type="password" name="name" placeholder="Password ...">
+                                        </div>
+                                    </div>
+
+                                    <div class="button">
+                                        <button id="registerButton">
+                                            <a href="../landing-page-admin/index.html">Confirm</a>
+                                        </button>
+                                    </div>
+                                    <p>Do you have an account? <span id="loginLink">Login</span></p>
+                                </div>
+                            </div>
+                            <div id="form-body">
+                               <li>Hey, please choose from the above button with according to your concern!</li>
+                               <li>Doing so if you think that you are an <span id="orthing"> Admin </span>
+                            of this page</li>
+                            </div>
+
                         </div>
 
-                    </section>
+
+                    </div>
 
 
 
@@ -102,7 +126,7 @@
             </div>
         </div>
     </footer>
-
+<script type="text/javascript" src="./javascript.js"></script>
     <script type="text/javascript" src="../../assets/javascript/javascript.js"></script>
 
 </body>
