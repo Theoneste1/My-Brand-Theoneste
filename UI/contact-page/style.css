@@ -12,7 +12,21 @@ body{
   box-sizing: border-box;
 }
 
-
+.notification{
+  font-weight: bolder;
+  text-align: center;
+  color:green;
+  background-color:#f0f5ff;
+  padding: 3px;
+  width: 100%;
+  border-radius:5px;
+  margin: 5px 0;
+  display: none;
+}
+.Okay{
+  color:green;
+  font-size: 20px;
+}
 
 
 
@@ -63,16 +77,16 @@ body{
 }
 
 .form textarea, input{
-  background-color:#1E242C;
+  color:#1E242C;
   margin-top: 5px;
   width: 100%;
   border-radius: 5px;
-  color:#f0f5ff;
+   background-color:#e9eff7;
   padding-left: 10px;
   border-width: 0px;
 }
 
-input[type=text]{
+input[type=text],[type=email],[type=number]{
   height: 30px;
 }
 
@@ -115,6 +129,13 @@ button:hover{
   font-size: 16px;
 }
 
+label{
+  color: red;
+  display: none;
+}
+
+
+
 @media only screen  and (max-width: 700px) {
 
 
@@ -141,11 +162,9 @@ margin-bottom: 100px;
   width: 100%;
 }
 .form textarea, input{
-  background-color:#1E242C;
   margin-top: 5px;
   width: 98%;
   border-radius: 5px;
-  color:#f0f5ff;
   padding-left: 10px;
   border-width: 0px;
 }
@@ -193,11 +212,9 @@ margin-bottom: 100px;
 }
 
 .form textarea, input{
-  background-color:#1E242C;
   margin-top: 5px;
   width: 98%;
   border-radius: 5px;
-  color:#f0f5ff;
   padding-left: 10px;
   border-width: 0px;
 }
@@ -215,7 +232,6 @@ margin-bottom: 100px;
   text-decoration: underline;
 }
 .contact p{
-  color: #09C2C9;
   padding-top: 10px;
   text-align: center;
 }

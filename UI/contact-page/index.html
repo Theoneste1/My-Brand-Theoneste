@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <>
+    <section>
         <div class="container">
 
             <div class="inner-container">
@@ -50,19 +50,29 @@
 
                     <!-- form  part -->
 
+
                     <div class=" form-part">
-                        <div class="form-container">
+                        <form id="contactForm" class="form-container">
+
                             <div class="form">
                                 <div class="inner-form">
-                                    <input type="text" name="name" placeholder="Name">
-                                    <input type="text" name="name" placeholder="Enter email">
-
-                                    <textarea rows="5" cols="10" placeholder="Type the message..."></textarea>
+                                    <div class="notification">Your message has been sent 100%!<span class="Okay" >
+                                        &#10004;</span></div>
+                                        <label id="firstNameError" class="label"> First Name should be atleast three charcter*</label>
+                                        <input id="firstName" type="text" name="name" placeholder="First Name" required>
+                                        <label id="lastNameError" class="label">Last Name should be at least three charcter*</label>
+                                        <input id="lastName" type="text" name="name" placeholder="Last Name" required>
+                                        <label id="phoneNumberError" class="label">Phone number should be a numbers only*</label>
+                                        <input id="phoneNumber" type="text" name="number" placeholder="Phone Number" required>
+                                        <label id="emailError" class="label"> Email address is not well formatted*</label>
+                                        <input id="email" type="text" name="name" placeholder="Enter email" required>
+                                        <label id="messageError" class="label">message should be at least three words*</label>
+                                        <textarea id="message" rows="5" cols="10" placeholder="Type the message..." required></textarea>
                                 </div>
                             </div>
 
                             <div class="button">
-                                <button>SUBMIT</button>
+                                <button type="submit" id="submitBtn" >SUBMIT</button>
                             </div>
                             <div class="contact-phone">
 
@@ -70,7 +80,7 @@
                                 <i class="fa fa-phone"> : +250728812255</i>
 
                             </div>
-                        </div>
+                        </form>
                     </div>
 
                 </div>
@@ -98,6 +108,11 @@
                 </div>
             </div>
         </footer>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+
 
 
         <script type="text/javascript" src="./javaScript.js"></script>
