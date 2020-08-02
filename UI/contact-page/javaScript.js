@@ -117,7 +117,6 @@ function submitInput(e) {
         return;
     }
     else {
-        console.log(labelDisplayStyle)
 
         savemessage(firstName, lastName, email, phoneNumber, message)
 
@@ -132,19 +131,14 @@ function submitInput(e) {
         // cleaning the form
         document.getElementById('contactForm').reset()
 
-console.log("you can now submit")
-
     }
     }
-
-
-
-
 
 
 
 // function to save the message to fire base
 function savemessage(firstName, lastName, email, phone, message) {
+    // message reference
     let newmessageRef = messagesRef.push();
     newmessageRef.set({
         firstName: firstName,
@@ -156,6 +150,3 @@ function savemessage(firstName, lastName, email, phone, message) {
 }
 
 
-
-
-// console.log("Jules")
