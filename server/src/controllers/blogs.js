@@ -6,9 +6,9 @@ exports.findBlogs=async (req, res) => {
 }
 
 exports.createBlog = async (req, res) => {
-    const blog = new blogmodel(req.body)
-    await blog.save();
-    res.send({data:blog })
+    const newBlog = new blogmodel(req.body)
+    await newBlog.save();
+    res.send({ data: newBlog })
 }
 
 exports.findBlog = async (req, res) => {
