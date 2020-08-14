@@ -1,6 +1,6 @@
-const mongoose = require("mongoose")
+import mongoose from "mongoose"
 const schema = new mongoose.Schema({
-    topic: String,
-    content: String
+    topic: { type: String, required: true },
+    content: {type:String, required:true}
 });
 module.exports = mongoose.model("Blog", schema);
