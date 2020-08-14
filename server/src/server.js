@@ -1,11 +1,11 @@
 
-
 import express from "express";
 import mongoose from "mongoose";
 import blogRouter from "./routes/blogRouter";
-
-
-
+import bodyParser from "body-parser"
+import passport from "passport"
+import UserLoginRouter from "./routes/loginRouter"
+const secureRoute = require('./routes/secure-route');
 const app = express()
 app.use(express.json());
 
@@ -22,20 +22,21 @@ mongoose.connect("mongodb://localhost:27017/theoneste", {
     console.log("Data base connection failed", error)
 })
 
+// mongoose.connection.on('error', error => console.log(error));
+// mongoose.Promise = global.Promise;
 
-// app.get("/blogs", blogController.findBlogs)
+// require('./auth/login');
+// app.use(bodyParser.urlencoded({ extended: false }));
 
-// app.get("/blogs/:id", blogController.findBlog)
-// app.patch("/blogs/:id", blogController.updateBlog)
-// app.delete("/blogs/:id", blogController.deleteBlog)
+// app.use("/", UserLoginRouter);
+// //We plugin our jwt strategy as a middleware so only verified users can access this route
+// app.use('/user', passport.authenticate('jwt', { session: false }), secureRoute);
 
-
-// calling the routes for queries
-// app.get("/queries", queryController.findQueries)
-// app.post("/queries", queryController.createQueries)
-
-// calling the routes for sign up
-// app.post("/signUp", signUpValidate, (req,res)=>res.send("A @hapi/joi validation"))
+// //Handle errors
+// app.use(function (err, req, res, next) {
+//     res.status(err.status || 500);
+//     res.json({ error: err });
+// });
 
 const PORT = 8000;
 
