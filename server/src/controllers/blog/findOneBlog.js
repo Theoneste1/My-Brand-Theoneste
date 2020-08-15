@@ -1,7 +1,7 @@
 import blogmodel from "./../../models/blog"
 
 const findOneBlog = (req, res, next) => {
-    const blog = blogmodel.findById({
+    blogmodel.findById({
         _id: req.params.id
     }).then(
         (blog) => {
@@ -15,5 +15,6 @@ const findOneBlog = (req, res, next) => {
         }
     );
 };
+
 
 export default findOneBlog

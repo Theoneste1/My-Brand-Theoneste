@@ -1,26 +1,25 @@
 import blogmodel from "./../../models/blog"
 
-const upDateBlog = (req, res, next) => {
-    const blog = new blogmodel.findById({
-        _id: req.params.id,
-        image: req.body.title,
-        topic: req.body.topic,
-        content: req.body.content
-    });
-    blogmodel.updateOne(
-        { _id: req.params.id }, blog).then(
-            () => {
-                res.status(201).json({
-                    message: "blog updated successfully!"
-                });
-            }).catch(
-                (error) => {
-                    res.status(400).json({
-                        error: error
-                    });
-                }
-            );
-}
+const updateBlog = (req, res, next) => {
+     blogmodel.findById({ _id: req.params.id }).then(
+            (blog)=>{
+        if (req.body.topic) {
+            blog.topic = req.body.topic
+        }
+        if (req.body.content) {
+            blog.content = req.body.content
+        }
+        blog.save()
+        res.send(blog)
+    } ).catch(
+        (error) => {
+            res.status(404).json({
+                error: error
+            });
+        }
+    )
+
+    }
 
 
-export  default upDateBlog 
+export  default updateBlog

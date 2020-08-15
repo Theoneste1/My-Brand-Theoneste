@@ -2,6 +2,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import blogRouter from "./routes/blogRouter";
+import queryRouter from "./routes/queryRouter"
 import bodyParser from "body-parser"
 import passport from "passport"
 import UserLoginRouter from "./routes/loginRouter"
@@ -11,8 +12,9 @@ app.use(express.json());
 
 // calling the routes of blogs
 app.use("/", blogRouter)
+app.use("/", queryRouter)
 
-mongoose.connect("mongodb://localhost:27017/theoneste", {
+mongoose.connect("mongodb://localhost:27017/theonesteDb", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {

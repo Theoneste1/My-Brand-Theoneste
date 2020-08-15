@@ -7,10 +7,10 @@ const createBlog = (req, res, next) => {
     });
     newBlog.save().then(
         () => {
-            res.status(200).json({
+            res.status(201).json({
                 message: 'Blog saved successfully!'
             });
-        },
+        }
     ).catch(
         (error) => {
             res.status(400).json({
@@ -18,7 +18,7 @@ const createBlog = (req, res, next) => {
             });
             console.log("THis sis errot:", error);
         });
-   
+
 };
 
 export default createBlog

@@ -1,10 +1,10 @@
 // importing runtime to support async in es6
 import 'regenerator-runtime/runtime'
-import blogmodel from "./../../models/blog"
+import querymodel from "./../../models/query"
 
-const deleteBlog =async (req, res, next) => {
+const deleteQuery = async (req, res, next) => {
     try {
-        await blogmodel.deleteOne({ _id: req.params.id })
+        await querymodel.deleteOne({ _id: req.params.id })
         res.status(204).send()
     } catch{
         (error) => {
@@ -14,4 +14,4 @@ const deleteBlog =async (req, res, next) => {
         }
     }
 }
-export default deleteBlog
+export default deleteQuery

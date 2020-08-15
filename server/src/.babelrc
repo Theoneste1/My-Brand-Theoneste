@@ -1,4 +1,5 @@
 //babel trigger environment in babel
+
 {
     "presets": ["@babel/preset-env"]
 }
