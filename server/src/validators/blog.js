@@ -6,6 +6,9 @@ const blogValidate = (req, res, next) => {
         topic: Joi.string()
             .required()
             .min(5),
+        image: Joi.string()
+            .required()
+            .min(5),
         content: Joi.string()
             .required()
             .min(5)
@@ -21,4 +24,5 @@ const blogValidate = (req, res, next) => {
     next()
 
 }
+
 module.exports = blogValidate

@@ -1,6 +1,6 @@
 const Joi = require('@hapi/joi')
 
-const queryValidate = (req, res, next) => {
+const queryValidate = async(req, res, next) => {
 
     const schema = Joi.object({
         firstName: Joi.string()
@@ -15,7 +15,7 @@ const queryValidate = (req, res, next) => {
             .min(5)
     })
 
-    const result = schema.validate(req.body);
+    const result = await schema.validate(req.body);
     if (result.error) {
         res.status(400).json({
             status: 400,

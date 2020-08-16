@@ -1,11 +1,12 @@
 
 import express from "express";
 import mongoose from "mongoose";
+import session from "express-session"
 import blogRouter from "./routes/blogRouter";
 import queryRouter from "./routes/queryRouter"
-import bodyParser from "body-parser"
-import passport from "passport"
-import UserLoginRouter from "./routes/loginRouter"
+import userRouter from "./routes/UserRouter"
+
+import passportConfig from "../config/passport"
 const secureRoute = require('./routes/secure-route');
 const app = express()
 app.use(express.json());
@@ -14,34 +15,41 @@ app.use(express.json());
 app.use("/", blogRouter)
 app.use("/", queryRouter)
 
+app.use("/", userRouter)
+
 mongoose.connect("mongodb://localhost:27017/theonesteDb", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
     console.log("db connect successfully")
+    //insert admin
+    require('./seeds/admin');
+    app.use(express.json());
+
+// enable express session
+    app.use(session({
+        secret: 'secret',
+        resave: true,
+        saveUninitialized: true
+    }))
+
+
+    // passport
+    app.use(passportConfig.initialize());
+    app.use(passportConfig.session());
+
+    // default, router is 8000
+    const PORT = process.env.PORT || 8000;
+    app.listen(PORT, () => {
+        console.log(`server has started ${PORT}`)
+    });
 
 }).catch((error) => {
-    console.log("Data base connection failed", error)
+    console.log("Error : ", error)
 })
 
-// mongoose.connection.on('error', error => console.log(error));
-// mongoose.Promise = global.Promise;
 
-// require('./auth/login');
-// app.use(bodyParser.urlencoded({ extended: false }));
+mongoose.connection.on('error', error => console.log(error));
+mongoose.Promise = global.Promise;
 
-// app.use("/", UserLoginRouter);
-// //We plugin our jwt strategy as a middleware so only verified users can access this route
-// app.use('/user', passport.authenticate('jwt', { session: false }), secureRoute);
-
-// //Handle errors
-// app.use(function (err, req, res, next) {
-//     res.status(err.status || 500);
-//     res.json({ error: err });
-// });
-
-const PORT = 8000;
-
-app.listen(PORT, () => {
-    console.log(`server has started ${PORT}`)
-});
+app.use("/", secureRoute)
