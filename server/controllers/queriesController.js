@@ -12,14 +12,14 @@ const createQuery = async (req, res, next) => {
         });
         await newQuery.save().then(
             () => {
-                res.status(201).json({
+                res.status(201).send({status:201,
                     message: 'Query saved successfully!'
                 });
             }
         )
     }
     catch{
-        res.status(400).json({
+        res.status(400).send({status:400,
             message: 'Query not saved!',
         });
     }
@@ -29,11 +29,11 @@ const createQuery = async (req, res, next) => {
 const findAllQueries = (req, res, next) => {
     querymodel.find().then(
         (queries) => {
-            res.status(200).json(queries)
+            res.status(200).send({ status: 200, All_Messages: queries })
         }
     ).catch(
         (error) => {
-            res.status(400).json({
+            res.status(400).send({status:400,
                 error: error
             });
         }
@@ -46,11 +46,11 @@ const findOneQuery = (req, res, next) => {
         _id: req.params.id
     }).then(
         (blog) => {
-            res.status(200).json(blog);
+            res.status(200).send({status:200, blogFound:blog});
         }
     ).catch(
         (error) => {
-            res.status(404).json({
+            res.status(404).send({status:404,
                 error: error
             });
         }
@@ -61,10 +61,10 @@ const findOneQuery = (req, res, next) => {
 const deleteQuery = async (req, res, next) => {
     try {
         await querymodel.deleteOne({ _id: req.params.id })
-        res.status(204).send()
+        res.status(204).send({ status: 204, message:"Qwery deleted successfylly"})
     } catch{
         (error) => {
-            res.status(404).json({
+            res.status(404).send({status:404,
                 error: error
             });
         }

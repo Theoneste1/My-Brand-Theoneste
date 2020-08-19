@@ -1,14 +1,11 @@
-const Joi = require('@hapi/joi')
-
+const Joi = require('@hapi/joi');
 const blogValidate = (req, res, next) => {
 
     const schema = Joi.object({
         topic: Joi.string()
             .required()
             .min(5),
-        image: Joi.string()
-            .required()
-            .min(5),
+        imageLink: Joi.string(),
         content: Joi.string()
             .required()
             .min(5)

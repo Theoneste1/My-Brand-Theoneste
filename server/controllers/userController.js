@@ -3,7 +3,6 @@ import passport from "passport"
 import { verfyingToken, assigningToken } from "../middlewares/verfyingToken"
 import jwt from 'jsonwebtoken';
 import { response } from "express";
-const password = require("passport")
 require("dotenv").config();
 
 
@@ -13,7 +12,7 @@ const userLogin = (req, res) => {
         password: process.env.ADMIN_PASSWORD
     }
     jwt.sign(user, process.env.SECRET_KEY, function (err, token) {
-        return res.json({
+        return res.send({
             token
         })
 

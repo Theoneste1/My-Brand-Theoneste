@@ -1,18 +1,19 @@
 // controllers
 // importing runtime to support async in es6
 import 'regenerator-runtime/runtime'
-import blogmodel from "./../models/blogModel"
+import blogmodel from "../models/blogModel"
 
 // find all blogs
 const findAllBlogs = (req, res, next) => {
     blogmodel.find().then(
         (blogs) => {
-            res.status(200).json(blogs)
+            res.status(200)
+                .send({ status: 200, blogs: blogs })
         }
     ).catch(
-        (error) => {
-            res.status(400).json({
-                error: error
+        (error)=> {
+            res.status(400).
+            send({status:400, error: error
             });
         }
     );
@@ -21,22 +22,19 @@ const findAllBlogs = (req, res, next) => {
     // controller, create one blog
 const createBlog = (req, res, next) => {
     const newBlog = new blogmodel({
-        image: req.body.image,
+        imageLink: req.body.imageLink,
         topic: req.body.topic,
         content: req.body.content
     });
     newBlog.save().then(
         () => {
-            res.status(201).json({
-                message: 'Blog saved successfully!'
+            res.status(201).send({status:201, message:"blog created successfully"
             });
         }
     ).catch(
         (error) => {
-            res.status(400).json({
-                message: 'Blog not saved!',
+            res.status(400).send({status:400, error:error
             });
-            console.log("THis sis errot:", error);
         });
 };
 
@@ -46,11 +44,11 @@ const findOneBlog = (req, res, next) => {
         _id: req.params.id
     }).then(
         (blog) => {
-            res.status(200).json(blog);
+            res.status(200).send({ status:200, foundBlog:blog});
         }
     ).catch(
         (error) => {
-            res.status(404).json({
+            res.status(404).send({status:404,
                 error: error
             });
         }
@@ -61,8 +59,8 @@ const findOneBlog = (req, res, next) => {
 const upDateBlog = (req, res, next) => {
     blogmodel.findById({ _id: req.params.id }).then(
         (blog) => {
-            if (req.body.image) {
-                blog.image = req.body.image
+            if (req.body.imageLink) {
+                blog.imageLink = req.body.imageLink
             }
             if (req.body.topic) {
                 blog.topic = req.body.topic
@@ -71,10 +69,10 @@ const upDateBlog = (req, res, next) => {
                 blog.content = req.body.content
             }
             blog.save()
-            res.send(blog)
+            res.send({status:200, message:"blog updated successfully"})
         }).catch(
             (error) => {
-                res.status(404).json({
+                res.status(404).send({ status:404,
                     error: error
                 });
             }
@@ -85,11 +83,12 @@ const upDateBlog = (req, res, next) => {
 const deleteBlog = async (req, res, next) => {
     try {
         await blogmodel.deleteOne({ _id: req.params.id })
-        res.status(204).send()
+        res.status(204).send({status:204, message:"blog deleted"} )
     } catch{
         (error) => {
-            res.status(404).json({
-                error: error
+            res.status(404).send({status:404,
+                error: "blog deleted",
+
             });
         }
     }

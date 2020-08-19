@@ -3,17 +3,21 @@ import express from "express";
 import mongoose from "mongoose";
 import session from "express-session"
 import blogRouter from "./routes/blogRouter";
-import queryRouter from "./routes/queryRouter"
-import userRouter from "./routes/UserRouter"
+import queryRouter from "./routes/queryRouter";
+import userRouter from "./routes/UserRouter";
+import actionOnBlog from "./routes/actionOnBlogRouter"
+import profileRouter from "./routes/profileRouter"
 
-import passportConfig from "../config/passport"
+import passportConfig from "./config/passport"
 const secureRoute = require('./routes/secure-route');
 const app = express()
 app.use(express.json());
 
 // calling the routes of blogs
 app.use("/", blogRouter)
+app.use("/",actionOnBlog)
 app.use("/", queryRouter)
+app.use("/",profileRouter)
 
 app.use("/", userRouter)
 

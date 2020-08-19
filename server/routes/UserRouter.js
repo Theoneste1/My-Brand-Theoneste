@@ -1,6 +1,6 @@
 
 import express from "express"
-import blogValidator from "./../validators/blog"
+import blogValidator from "../validators/blog"
 import { verfyingToken, assigningToken }  from "./../middlewares/verfyingToken"
 import { createBlog, findAllBlogs, findOneBlog,upDateBlog,deleteBlog } from "./../controllers/blogsController"
 import { userLogin, logout}from "../controllers/userController"
