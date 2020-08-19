@@ -2,7 +2,6 @@ import express from "express"
 import { createBlog, deleteBlog, findAllBlogs, findOneBlog, upDateBlog } from "../controllers/blogsController"
 import { verfyingToken, assigningToken } from "../middlewares/verfyingToken"
 import blogValidator from "../validators/blog"
-
 const router = express.Router();
 
 router.post("/api/blogs/", verfyingToken, blogValidator, createBlog)

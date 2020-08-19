@@ -2,9 +2,6 @@ import express from "express"
 import queryValidator from "./../validators/query"
 import { createQuery, findAllQueries, findOneQuery, deleteQuery } from "./../controllers/queriesController"
 import { verfyingToken, assigningToken } from "./../middlewares/verfyingToken"
-
-
-
 const router = express.Router();
 
 router.post("/api/queries/",queryValidator, createQuery)

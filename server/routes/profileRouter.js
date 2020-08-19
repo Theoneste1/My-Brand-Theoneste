@@ -1,9 +1,6 @@
 import express from "express"
-
 import { verfyingToken, assigningToken } from "../middlewares/verfyingToken"
-
 import { createProfile, deleteProfile, findAllProfiles, upDateProfile } from "../controllers/profileController"
-
 const router = express.Router();
 
 router.post("/api/user/profile", verfyingToken, createProfile)
