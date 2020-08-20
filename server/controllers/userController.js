@@ -1,0 +1,49 @@
+
+import passport from "passport"
+import { verfyingToken, assigningToken } from "../middlewares/verfyingToken"
+import jwt from 'jsonwebtoken';
+import UserModel from "./../models/userModel"
+import { response } from "express";
+require("dotenv").config();
+
+
+const userLogin =async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        const admin = await UserModel.findOne({ email: email });
+        if (!admin) return res.status(400).send({ status: 400, message: "user does not exist" });
+        if (admin.password !== password) return res.status(400).send({ status: 400, error: "Incorrect password" });
+        const token = assigningToken({ admin: admin.email });
+        return res.status(200).send({ status: 200, message: "Successfully loged in", token: token });
+
+    } catch (error) {
+        res.status(500).send({ status: 500, error: error.message })
+    }
+}
+
+
+
+
+//     const user = {
+//         email: process.env.ADMIN_EMAIL,
+//         password: process.env.ADMIN_PASSWORD
+//     }
+//     jwt.sign(user, process.env.SECRET_KEY, function (err, token) {
+//         return res.send({ token })
+//     })
+//     console.log(user.email)
+//     console.log(user.password)
+// }
+
+
+
+
+
+// logout
+const logout = (req, res) => {
+    res.logout();
+    res.send("logged out successfully!");
+}
+
+// export all the functions
+export { userLogin, logout}
