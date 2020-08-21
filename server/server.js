@@ -9,7 +9,7 @@ import actionOnBlog from "./routes/actionOnBlogRouter"
 import profileRouter from "./routes/profileRouter"
 
 import passportConfig from "./config/passport"
-const secureRoute = require('./routes/secure-route');
+import secureRoute from './routes/secure-route';
 const app = express()
 app.use(express.json());
 
@@ -57,3 +57,5 @@ mongoose.connection.on('error', error => console.log(error));
 mongoose.Promise = global.Promise;
 
 app.use("/", secureRoute)
+
+export default app;

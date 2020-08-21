@@ -1,4 +1,4 @@
-const Joi = require('@hapi/joi');
+import Joi from '@hapi/joi';
 const blogValidate = (req, res, next) => {
 
     const schema = Joi.object({
@@ -9,7 +9,7 @@ const blogValidate = (req, res, next) => {
 
     const result = schema.validate(req.body);
     if (result.error) {
-        res.status(400).json({status: 400,error: `${result.error.details[0].message}`
+       return res.status(400).json({status: 400,error: `${result.error.details[0].message}`
         })
     }
     next()

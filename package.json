@@ -1,0 +1,54 @@
+{
+  "name": "My-Brand-Theoneste",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node ./server/server.js",
+    "test": "nyc --reporter=html --reporter=text mocha --require @babel/register ./server/tests/*.test.js --timeout 10000 --exit",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Theoneste1/My-Brand-Theoneste.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Theoneste1/My-Brand-Theoneste/issues"
+  },
+  "homepage": "https://github.com/Theoneste1/My-Brand-Theoneste#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.4",
+    "@babel/node": "^7.10.5",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/polyfill": "^7.10.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/register": "^7.10.5",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "coveralls": "^3.1.0",
+    "nodemon": "^2.0.4",
+    "nyc": "^15.1.0"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "concat-stream": "^2.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "image-type": "^4.1.0",
+    "joi": "^17.2.1",
+    "joi-image-extension": "^1.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mocha": "^8.1.1",
+    "mongoose": "^5.10.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  }
+}

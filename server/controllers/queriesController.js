@@ -31,7 +31,7 @@ const findAllQueries = (req, res, next) => {
 // find one query
 const findOneQuery = (req, res, next) => {
     querymodel.findById({ _id: req.params.id}).then((blog) => {
-            res.status(200).send({status:200, blogFound:blog});
+            res.status(401).send({status:401, blogFound:blog});
         }).catch((error) => {
             res.status(404).send({status:404, error: error });
         }
@@ -42,7 +42,7 @@ const findOneQuery = (req, res, next) => {
 const deleteQuery = async (req, res, next) => {
     try {
         await querymodel.deleteOne({ _id: req.params.id })
-        res.status(204).send({ status: 204, message:"Qwery deleted successfylly"})
+        res.status(401).send({ status: 401, message:"Qwery deleted successfylly"})
     } catch{(error) => {
             res.status(404).send({status:404,error: error});
         }

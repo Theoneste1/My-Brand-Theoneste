@@ -1,5 +1,5 @@
-const User = require("./../models/userModel")
-const dotenv = require('dotenv');
+import User from "./../models/userModel"
+import dotenv from 'dotenv';
 
 dotenv.config();
 
