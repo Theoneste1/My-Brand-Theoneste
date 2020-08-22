@@ -1,9 +1,6 @@
 
-import passport from "passport"
-import { verfyingToken, assigningToken } from "../middlewares/verfyingToken"
-import jwt from 'jsonwebtoken';
+import {  assigningToken } from "../middlewares/verfyingToken"
 import UserModel from "./../models/userModel"
-import { response } from "express";
 require("dotenv").config();
 
 
@@ -25,8 +22,7 @@ const userLogin =async (req, res) => {
 // logout
 const logout = (req, res) => {
     res.logout();
-    res.send("logged out successfully!");
+    res.status(500).send({ status: 500, message: "logged out successfully!" });
 }
-
 // export all the functions
 export { userLogin, logout}

@@ -12,20 +12,20 @@ const createProfile = (req, res, next) => {
         skills:req.body.skills
     });
     newProfile.save().then(() => {
-        res.status(201).send({ status: 201, message: "Profile created successfully" })
+        return res.status(201).send({ status: 201, data:newProfile })
         }).catch((error) => {
-            res.status(400).send({status: 400, error: error});
+           return res.status(400).send({status: 400, error: error});
         });
 };
 
-// find all Profiles
-const findAllProfiles = (req, res, next) => {
-    profileModel.find().then((Profiles) => {
-            res.status(200).send({ status: 200, message:Profiles })
-        } ).catch((error)=> {
-            res.status(400).send({status:400, error: error});
-    });
-}
+// // find all Profiles
+// const findAllProfiles = (req, res, next) => {
+//     profileModel.find().then((Profiles) => {
+//            return res.status(200).send({ status: 200, message:Profiles })
+//         } ).catch((error)=> {
+//             return res.status(400).send({status:400, error: error});
+//     });
+// }
 
 // update one Profile
 const upDateProfile = (req, res, next) => {
@@ -35,20 +35,20 @@ const upDateProfile = (req, res, next) => {
             if (req.body.description) { Profile.description = req.body.description }
             if (req.body.skills) { Profile.skills = req.body.skills}
             Profile.save()
-            res.send({ status: 200, message: "profile updated successfully" })
+            return res.send({ status: 200, message: "profile updated successfully" })
         }).catch((error) => {
-                res.status(404).send({status: 404,error: error });
+               return res.status(404).send({status: 404,error: error });
         })
 }
-            
+
 // dele one Profile
 const deleteProfile = async (req, res, next) => {
     try {
         await profileModel.deleteOne({ _id: req.params.id })
-        res.status(204).send({ status: 204, message: "User profile deleted successfully" })
+        return res.status(204).send({ status: 204, message: "User profile deleted successfully" })
     } catch{(error) => {
-            res.status(404).send({status: 404, error: "Profile deleted"});
+           return res.status(404).send({status: 404, error: "Profile deleted"});
         }}
 }
 
-export { createProfile, deleteProfile, findAllProfiles, upDateProfile }
+export { createProfile, deleteProfile,  upDateProfile }

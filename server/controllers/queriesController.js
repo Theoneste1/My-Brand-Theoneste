@@ -11,29 +11,29 @@ const createQuery = async (req, res, next) => {
             message: req.body.message
         });
         await newQuery.save().then(() => {
-                res.status(201).send({status:201,message: 'Query saved successfully!'});
+               return res.status(201).send({queries:newQuery});
             })
     }
     catch{
-        res.status(400).send({status:400,message: 'Query not saved!'});
+       return res.status(400).send({status:400,message: 'Query not saved!'});
     }
 };
 
 // find all queries
 const findAllQueries = (req, res, next) => {
     querymodel.find().then((queries) => {
-            res.status(200).send({ status: 200, All_Messages: queries })
+          return  res.status(200).send({ status: 200, queries: queries })
         } ).catch( (error) => {
-            res.status(400).send({status:400,error: error});
+           return res.status(401).send({status:401,error: error});
         });
 }
 
 // find one query
 const findOneQuery = (req, res, next) => {
-    querymodel.findById({ _id: req.params.id}).then((blog) => {
-            res.status(401).send({status:401, blogFound:blog});
+    querymodel.findById({ _id: req.params.id}).then((query) => {
+          return  res.status(200).send({status:200, queries:query});
         }).catch((error) => {
-            res.status(404).send({status:404, error: error });
+          return  res.status(401).send({status:401, error: error });
         }
     );
 };
@@ -42,9 +42,9 @@ const findOneQuery = (req, res, next) => {
 const deleteQuery = async (req, res, next) => {
     try {
         await querymodel.deleteOne({ _id: req.params.id })
-        res.status(401).send({ status: 401, message:"Qwery deleted successfylly"})
+       return  res.status(200).send({ status: 200, message:"Qwery deleted successfylly"})
     } catch{(error) => {
-            res.status(404).send({status:404,error: error});
+         return  res.status(401).send({status:401,error: error});
         }
     }
 }

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.16% </span>
+                <span class="strong">76.47% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/19</span>
+                <span class='fraction'>13/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">70% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>8/10</span>
+                <span class='fraction'>7/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.29% </span>
+                <span class="strong">78.57% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>9/14</span>
+                <span class='fraction'>11/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.82% </span>
+                <span class="strong">73.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/17</span>
+                <span class='fraction'>11/15</span>
             </div>
         
             
@@ -126,14 +126,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -153,7 +153,7 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -165,7 +165,7 @@
 import querymodel from "../models/queryModel"
 &nbsp;
 // create a query
-const createQuery = <span class="branch-2 cbranch-no" title="branch not covered" >async (req, res, next) =&gt; {</span>
+const createQuery = <span class="branch-2 cbranch-no" title="branch not covered" >async (r</span>eq, res, next) =&gt; {
     try {
         const newQuery = new querymodel({
             firstName: req.body.firstName,
@@ -174,40 +174,40 @@ const createQuery = <span class="branch-2 cbranch-no" title="branch not covered"
             message: req.body.message
         });
         await newQuery.save().then(() =&gt; {
-                res.status(201).send({status:201,message: 'Query saved successfully!'});
+               return res.status(201).send({queries:newQuery});
             })
     }
     catch{
-<span class="cstat-no" title="statement not covered" >        res.</span>status(400).send({status:400,message: 'Query not saved!'});
+       return res.status(400).send({status:400,message: 'Query not saved!'});
     }
 };
 &nbsp;
 // find all queries
-const <span class="fstat-no" title="function not covered" >findAllQueries </span>= (req, res, next) =&gt; {
-<span class="cstat-no" title="statement not covered" >    querymodel.f</span>ind().then(<span class="fstat-no" title="function not covered" >(q</span>ueries) =&gt; {
-<span class="cstat-no" title="statement not covered" >            res.</span>status(200).send({ status: 200, All_Messages: queries })
+const findAllQueries = (req, res, next) =&gt; {
+    querymodel.find().then((queries) =&gt; {
+          return  res.status(200).send({ status: 200, queries: queries })
         } ).catch( <span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; {
-<span class="cstat-no" title="statement not covered" >            res.</span>status(400).send({status:400,error: error});
+<span class="cstat-no" title="statement not covered" >           return r</span>es.status(401).send({status:401,error: error});
         });
 }
 &nbsp;
 // find one query
 const findOneQuery = (req, res, next) =&gt; {
-    querymodel.findById({ _id: req.params.id}).then((blog) =&gt; {
-            res.status(401).send({status:401, blogFound:blog});
+    querymodel.findById({ _id: req.params.id}).then((query) =&gt; {
+          return  res.status(200).send({status:200, queries:query});
         }).catch(<span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; {
-<span class="cstat-no" title="statement not covered" >            res.</span>status(404).send({status:404, error: error });
+<span class="cstat-no" title="statement not covered" >          return  r</span>es.status(401).send({status:401, error: error });
         }
     );
 };
 &nbsp;
 // delete a query
-const deleteQuery = <span class="branch-2 cbranch-no" title="branch not covered" >async (req, res, next) =&gt; {</span>
+const deleteQuery = <span class="branch-3 cbranch-no" title="branch not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >async (r</span>eq, res, next) =&gt; {</span>
     try {
         await querymodel.deleteOne({ _id: req.params.id })
-        res.status(401).send({ status: 401, message:"Qwery deleted successfylly"})
+       return  res.status(200).send({ status: 200, message:"Qwery deleted successfylly"})
     } catch{<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span></span>rror) =&gt; {
-<span class="cstat-no" title="statement not covered" >            res.</span>status(404).send({status:404,error: error});
+<span class="cstat-no" title="statement not covered" >         return  r</span>es.status(401).send({status:401,error: error});
         }
     }
 }
@@ -220,7 +220,7 @@ export {createQuery, findAllQueries, findOneQuery, deleteQuery}
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Aug 21 2020 20:22:18 GMT+0200 (South Africa Standard Time)
+                at Sun Aug 23 2020 17:43:23 GMT+0200 (South Africa Standard Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

@@ -4,9 +4,9 @@ import { createQuery, findAllQueries, findOneQuery, deleteQuery } from "./../con
 import { verfyingToken, assigningToken } from "./../middlewares/verfyingToken"
 const router = express.Router();
 
-router.post("/api/queries/",queryValidator, createQuery)
-router.get("/api/queries/", verfyingToken, findAllQueries)
-router.get("/api/queries/:id", verfyingToken, findOneQuery)
-router.delete("/api/queries/:id/", verfyingToken, deleteQuery)
+router.post("/api/user/queries/",queryValidator, createQuery)
+router.get("/api/user/queries/", verfyingToken, findAllQueries)
+router.get("/api/user/queries/:id", verfyingToken, findOneQuery)
+router.delete("/api/user/queries/:id/", verfyingToken, deleteQuery)
 
 export default router;

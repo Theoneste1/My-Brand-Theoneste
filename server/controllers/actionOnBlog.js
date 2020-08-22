@@ -15,7 +15,7 @@ const addComment = async (req, res) => {
 
     } catch (error) {
         console.log(error)
-        res.status(400).send({ status: 400, error: "blog is not exit!" })
+        return res.status(400).send({ status: 400, error: "blog is not exit!" })
     }
 }
 
@@ -37,7 +37,7 @@ const dislikeBlog = async (req, res) => {
         await blogmodel.updateOne({ _id: req.params.id }, { $inc: { dislikes: 1 } });
         return res.status(200).send({ status: 200, message: "disliked!!!" });
     } catch (error) {
-        res.status(400).send({ status: 400, error: "blog doesn't exist!" });
+        return res.status(400).send({ status: 400, error: "blog doesn't exist!" });
     }
 }
 

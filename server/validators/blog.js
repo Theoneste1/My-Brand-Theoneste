@@ -1,4 +1,4 @@
-import Joi from '@hapi/joi';
+import Joi from 'joi';
 const blogValidate = (req, res, next) => {
 
     const schema = Joi.object({
