@@ -115,17 +115,6 @@ describe("testing query", () => {
             });
     })
 
-    it("should not delete one query by Id", (done) => {
-        // /api/queries
-        chai.request(app)
-            .delete(`/api/user/queries/${queryId}`)
-            .end((error, response) => {
-                expect(error).to.be.null;
-                expect(response).to.have.status(401);
-                done();
-            });
-    })
-
     it("should delete one query by Id", (done) => {
         // /api/queries
         chai.request(app)
@@ -134,6 +123,17 @@ describe("testing query", () => {
             .end((error, response) => {
                 expect(error).to.be.null;
                 expect(response).to.have.status(200);
+                done();
+            });
+    })
+
+    it("should not delete one query by Id", (done) => {
+        // /api/queries
+        chai.request(app)
+            .delete(`/api/user/queries/${queryId}`)
+            .end((error, response) => {
+                expect(error).to.be.null;
+                expect(response).to.have.status(401);
                 done();
             });
     })
