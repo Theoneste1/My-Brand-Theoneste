@@ -1,4 +1,5 @@
 
+import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
 import session from "express-session"
@@ -12,6 +13,7 @@ import profileRouter from "./routes/profileRouter"
 // import secureRoute from './routes/secure-route';
 const app = express()
 app.use(express.json());
+dotenv.config();
 
 // calling the routes of blogs
 app.use("/", blogRouter)
@@ -21,7 +23,7 @@ app.use("/",profileRouter)
 
 app.use("/", userRouter)
 
-mongoose.connect("mongodb://localhost:27017/theonesteDb", {
+mongoose.connect(process.env.DbConnection, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
