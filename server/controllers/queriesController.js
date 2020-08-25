@@ -44,9 +44,8 @@ const deleteQuery = async (req, res, next) => {
         await querymodel.deleteOne({ _id: req.params.id })
        return  res.status(200).send({ status: 200, message:"Qwery deleted successfylly"})
     } catch{(error) => {
-         return  res.status(401).send({status:401,error: error});
+         return  res.status(404).send({status:404,error: error});
         }
     }
 }
-
 export {createQuery, findAllQueries, findOneQuery, deleteQuery}
