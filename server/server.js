@@ -1,4 +1,5 @@
 
+import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
 import session from "express-session"
@@ -8,10 +9,11 @@ import userRouter from "./routes/UserRouter";
 import actionOnBlog from "./routes/actionOnBlogRouter"
 import profileRouter from "./routes/profileRouter"
 
-import passportConfig from "./config/passport"
-const secureRoute = require('./routes/secure-route');
+// import passportConfig from "./config/passport"
+// import secureRoute from './routes/secure-route';
 const app = express()
 app.use(express.json());
+dotenv.config();
 
 // calling the routes of blogs
 app.use("/", blogRouter)
@@ -21,7 +23,7 @@ app.use("/",profileRouter)
 
 app.use("/", userRouter)
 
-mongoose.connect("mongodb://localhost:27017/theonesteDb", {
+mongoose.connect(process.env.DbConnection, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
@@ -38,12 +40,8 @@ mongoose.connect("mongodb://localhost:27017/theonesteDb", {
     }))
 
 
-    // passport
-    app.use(passportConfig.initialize());
-    app.use(passportConfig.session());
-
     // default, router is 8000
-    const PORT = process.env.PORT || 8000;
+    const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => {
         console.log(`server has started ${PORT}`)
     });
@@ -56,4 +54,6 @@ mongoose.connect("mongodb://localhost:27017/theonesteDb", {
 mongoose.connection.on('error', error => console.log(error));
 mongoose.Promise = global.Promise;
 
-app.use("/", secureRoute)
+// app.use("/", secureRoute)
+
+export default app;

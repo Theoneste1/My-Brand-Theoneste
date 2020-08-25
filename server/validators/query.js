@@ -1,4 +1,4 @@
-const Joi = require('@hapi/joi')
+import Joi from 'joi'
 
 const queryValidate = async(req, res, next) => {
     const schema = Joi.object({
@@ -9,7 +9,7 @@ const queryValidate = async(req, res, next) => {
     })
     const result = await schema.validate(req.body);
     if (result.error) {
-        res.status(400).json({status: 400, error: `${result.error.details[0].message}`
+        return res.status(400).json({status: 400, error: `${result.error.details[0].message}`
         })
     }
     next()
