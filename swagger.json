@@ -1,0 +1,515 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0",
+        "title": "app title",
+        "description": "all action related to my portfolio",
+        "contact": {
+            "email": "theoneste99@gmail.com"
+        },
+        "license": {
+            "name": "MIT",
+            "url": "https://github.com/Theoneste1/My-Brand-Theoneste"
+        }
+    },
+
+
+    "host": "localhost:3000",
+    "basePath": "/",
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+
+        "/api/user/login": {
+            "post": {
+                "tags": ["Admin"],
+                "summary": "An admin can login API",
+                "description": "login  as an admin",
+                "operationId": "admin login",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "user object that needed to login",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/login"
+                        }
+                    }],
+                "responses": {
+                    "200": {"description": "Login successfully"},
+                    "400":{"description":"Invalid input"}
+                }
+            }
+        },
+
+       "/api/user/blogs": {
+            "get": {
+                "tags": ["Users"],
+                "summary": "Users can view all blog post API",
+                "description": "view all blogs",
+                "operationId": "view all blogs",
+                "responses": {
+                    "200": {"description": "blogs successfully found"}
+                }
+            },
+                "post": {
+                    "tags": ["Admin"],
+                    "summary": "An admin can blog post API",
+                    "description": "createa  blog post",
+                    "operationId": "create blog",
+                    "parameters":[
+                        {
+                         "in": "header",
+                        "name":"Authorization",
+                        "required":true,
+                        "type":"string",
+                        "description":"Admin Token"
+                        },
+                        {
+                            "in":"body","name":"body","type":"object","required":true,
+                            "schema":{"$ref":"#definitions/createblog" }
+                            }
+                        ],
+
+                    "responses": {
+                        "200": {"description": "blog successfull created"},
+                        "400":{"description":"invalid inputs"},
+                        "401":{"description":"you need permission"}
+                    }
+                }
+
+        },
+
+        "/api/user/blogs/{id}": {
+            "get": {
+                "tags": ["Users"],
+                "summary": "User can  get a specific blog API",
+                "description": "view a specific blog",
+                "operationId": "view a specific blog",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true
+                    }
+
+                ],
+                "responses": {
+                    "200": {
+                        "description": "blog successfully found"
+                    },
+                    "404": {
+                        "description": "not  exit"
+                    }
+                }
+            },
+                    "patch": {
+                        "tags": ["Admin"],
+                        "summary": "Admin can  update a specific blog API",
+                        "description": "Admin can update a specific blog",
+                        "operationId": "update blog",
+                        "parameters": [
+                            {
+                                "in": "path",
+                                "name": "id",
+                                "required": true
+                            },
+                            {
+                                "in": "header",
+                                "name": "Authorization",
+                                "required": true,
+                                "type": "string",
+                                "description": "Admin Token"
+                            },
+                            {
+                                "in": "body",
+                                "name": "body",
+                                "required": true,
+                                "type": "object",
+                                "description": "Admin  will update",
+                                "schema": {
+                                    "$ref": "#/definitions/updateblog"
+                                }
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "blog successfully updated"
+                            },
+                            "400": {
+                                "description": "bad request"
+                            }
+                        }
+                    },
+
+            "delete": {
+                "tags": ["Admin"],
+                "summary": "Admin can  delete a specific blog API",
+                "description": "view a specific blog",
+                "operationId": "view a specific blog",
+                "parameters": [
+                    {"in": "path","name": "id","required": true},
+                    {"name": "Authorization","in": "header","required": true,
+                        "type": "string", "description": "Admin Token" }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "blog successfully deleted"
+                    },
+                    "404": {
+                        "description": "not deleted not found"
+                    }
+                }
+            }
+        },
+
+
+
+    "/api/user/queries": {
+        "post": {
+            "tags": [
+                "Users"
+            ],
+            "summary": "Users create a query API",
+            "description": "create a query",
+            "operationId": "create query",
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "description": "user object that needed to create a query",
+                    "type": "object",
+                    "required": true,
+                    "schema": { "$ref": "#/definitions/createQuery"}
+                }
+            ],
+            "responses": {
+                "200": {"description": "query created successfully"},
+                "400": {"description": "Bad request or invalid input field"}
+            }
+        },
+        "get": {
+            "tags": ["Admin"],
+            "summary": "Admin a query API",
+            "description": "Admin get all  queries",
+            "operationId": "admin the queries",
+            "parameters": [
+                {
+                    "in": "header",
+                    "name": "Authorization",
+                    "description": "an admin need to view the query",
+                    "type": "string",
+                    "required": true
+                }
+            ],
+            "responses": {
+                "200": {"description": "query gotten successfully"},
+                "401": {"description": "not authorised"}
+            }
+        }
+    },
+
+        "/api/user/queries/{id}": {
+        "get": {
+            "tags": ["Admin"],
+            "summary": "Admin can view a specific query API",
+            "description": "view a specific query",
+            "operationId": "view a specific query",
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "required": true
+                },
+                {
+                    "name": "Authorization",
+                    "in": "header",
+                    "required": true,
+                    "type": "string",
+                    "description": "Admin  right t view query"
+                }
+            ],
+            "responses": {
+                "200": {"description": "query successfully found"},
+                "404": {"description": "query not found"}
+            }
+        },
+        "delete":{
+            "tags":["Admin"],
+            "summary":"admin can delete a Query API",
+            "description":"delete a query by admin",
+            "operationId":"Admin Token",
+        "parameters":[{
+            "name":"Authorization",
+            "in":"header",
+            "required":true,
+            "type":"string",
+            "description":"Admin right to delete a query"
+        },
+        {"in":"path", "name":"id", "required":true}
+    ],
+    "responses":{
+        "204":{"description":"deleted successfully"},
+        "401":{"description":"you are not an admin"}
+    }
+    }
+},
+
+    "/api/user/blogs/comment/{id}":{
+        "post":{
+            "tags":["Users"],
+            "summary":"User can comment on a specific blog",
+            "description":"A user will comment on  a specific blog",
+            "operationId":"comment on a specific blog",
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "add comment on a blog"
+                },
+                {
+                    "name":"body",
+                    "in":"body",
+                    "type":"object",
+                    "schema":{"$ref":"#/definitions/addcomment"}
+                }
+            ],
+                "responses":{
+                    "200":{"description":"commented successfully"},
+                    "400":{"description":"bad request please"}
+                }
+    }
+},
+"/api/user/blogs/like/{id}": {
+    "post": {
+        "tags": ["Users"],
+        "summary": "User can like on a specific blog",
+        "description": "A user will like on  a specific blog",
+        "operationId": "like on a specific blog",
+        "parameters": [
+            {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "description": "like specific blog"
+            }
+        ],
+        "responses": {
+            "200": { "description": "Liked successfully"}
+        }
+    }
+},
+
+"/api/user/blogs/dislike/{id}": {
+    "post": {
+        "tags": ["Users"],
+        "summary": "User can dislike on a specific blog",
+        "description": "A user will dislike on  a specific blog",
+        "operationId": "dislike on a specific blog",
+        "parameters": [
+            {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "description": "dislike blog"
+            }
+        ],
+        "responses": {
+            "200": {"description": "disliked successfully"}
+        }
+    }
+},
+"/api/user/profile":{
+    "post":{
+        "tags":["Admin"],
+        "summary":"An admin can create a profile",
+        "description":"An admin will be able to create a profile",
+        "operationId":"create a profile",
+        "parameters":[
+            {
+                "name":"body",
+                "in":"body",
+                "required":true,
+                "description":"An admin profile"
+            },
+            {
+                "name":"Authorization",
+                "in":"header",
+                "required":true,
+                "description":"right to create profile"
+            }
+        ],
+        "responses":{
+            "200":{"description":"profile created successfully"},
+            "400":{"description":"bad request please"}
+        }
+    }
+},
+"/api/user/profile/{id}": {
+    "patch": {
+        "tags": [
+            "Admin"
+        ],
+        "summary": "An admin can change a profile",
+        "description": "An admin will be able to change a profile",
+        "operationId": "change a profile",
+        "parameters": [
+            {
+                "name": "path",
+                "in": "id",
+                "required": true,
+                "description": "An admin profile"
+            },
+            {
+                "name":"Authorization",
+                "in":"header",
+                "description":"authority to update profile",
+                "required":true
+            },
+            {
+                "name": "body",
+                "in": "body",
+                "required": true,
+                "description": "An admin profile",
+                "schema":{"$ref":"#/definitions/createProfile"}
+            }
+        ],
+        "responses": {
+            "200": {"description": "profile created successfully"},
+            "400": {"description": "bad request please"}
+        }
+    },
+    "delete": {
+        "tags": ["Admin"],
+        "summary": "An admin can delete a profile",
+        "description": "An admin will be able to delete a profile",
+        "operationId": "delete a profile",
+        "parameters": [
+            {
+                "name": "path",
+                "in": "id",
+                "required": true,
+                "description": "An admin profile"
+            },
+            {
+                "name":"Authorization",
+                "in":"header",
+                "required":true,
+                "type":"string",
+                "description":"admin profile"
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "profile deleted successfully"
+            }
+        }
+    }
+},
+
+
+
+
+    "definitions": {
+        "createQuery": {
+            "type": "object",
+            "properties": {
+                "firstName": {
+                    "type": "string",
+                    "required": true
+                },
+                "lastName": {
+                    "type": "string",
+                    "required": true
+                },
+                "email": {
+                    "type": "string",
+                    "required": true
+                },
+                "message": {
+                    "type": "string",
+                    "required": true
+                }
+            }
+        },
+            "createblog": {
+                "type": "object",
+                "properties": {
+                    "topic": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "imageLink": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "content": {
+                        "type": "string",
+                        "required": true
+                    }
+                }
+            },
+            "updateblog": {
+                "type": "object",
+                "properties": {
+                    "topic": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "imageLink": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "content": {
+                        "type": "string",
+                        "required": true
+                    }
+                }
+            },
+            "createProfile": {
+                "type": "object",
+                "properties": {
+                    "picture": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "title": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "description": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "skills": {
+                        "type": "string",
+                        "required": true
+                    }
+                }
+            },
+            "addcomment":{
+                "type":"object",
+                "properties":{
+                    "name":{"type":"string","required":true},
+                    "comment":{"type":"string","required":true}
+                }
+            },
+            "login": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "password": {
+                        "type": "string",
+                        "required": true
+                    }
+                }
+            }
+    }
+        }
+    }
