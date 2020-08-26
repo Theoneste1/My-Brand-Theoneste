@@ -1,6 +1,6 @@
-
-
 [![Build Status](https://travis-ci.com/Theoneste1/My-Brand-Theoneste.svg?branch=develop)](https://travis-ci.com/Theoneste1/My-Brand-Theoneste)
+[![Coverage Status](https://coveralls.io/repos/github/Theoneste1/My-Brand-Theoneste/badge.svg?branch=testsBranch)](https://coveralls.io/github/Theoneste1/My-Brand-Theoneste?branch=testsBranch)
+
 
 This is my personal website, it has been created to advertise myself, lol.
 in that  website, you will be able to read more about me, as well know,
