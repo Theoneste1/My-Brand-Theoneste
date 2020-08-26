@@ -1,4 +1,5 @@
 // import './node_modules/regenerator-runtime/runtime'
+import 'regenerator-runtime/runtime'
 import querymodel from "../models/queryModel"
 
 // create a query

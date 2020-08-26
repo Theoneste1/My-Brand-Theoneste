@@ -1,5 +1,5 @@
 import Joi from 'joi'
-
+import 'regenerator-runtime/runtime'
 const queryValidate = async(req, res, next) => {
     const schema = Joi.object({
         firstName: Joi.string().required().min(5),
