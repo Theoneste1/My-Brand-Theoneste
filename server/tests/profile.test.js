@@ -28,6 +28,16 @@ describe("testing about  login", () => {
 
 
 describe("testing about  profile", () => {
+    it("should return 200 find all users profile", (done) => {
+        chai.request(app)
+            .get("/api/user/profile")
+            .set("Authorization", token)
+            .end((error, response) => {
+                expect(error).to.be.null;
+                expect(response).to.have.status(200);
+                done();
+            });
+    })
     it("should return 201 create user profile", (done) => {
         chai.request(app)
             .post("/api/user/profile")

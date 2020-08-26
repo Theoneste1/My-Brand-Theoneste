@@ -1,8 +1,9 @@
 // import './node_modules/regenerator-runtime/runtime'
+import 'regenerator-runtime/runtime'
 import querymodel from "../models/queryModel"
 
 // create a query
-const createQuery = async (req, res, next) => {
+const createQuery = async (req, res) => {
     try {
         const newQuery = new querymodel({
             firstName: req.body.firstName,
@@ -20,7 +21,7 @@ const createQuery = async (req, res, next) => {
 };
 
 // find all queries
-const findAllQueries = (req, res, next) => {
+const findAllQueries = (req, res) => {
     querymodel.find().then((queries) => {
           return  res.status(200).send({ status: 200, queries: queries })
         } ).catch( (error) => {
@@ -29,7 +30,7 @@ const findAllQueries = (req, res, next) => {
 }
 
 // find one query
-const findOneQuery = (req, res, next) => {
+const findOneQuery = (req, res) => {
     querymodel.findById({ _id: req.params.id}).then((query) => {
           return  res.status(200).send({status:200, queries:query});
         }).catch((error) => {
@@ -39,7 +40,7 @@ const findOneQuery = (req, res, next) => {
 };
 
 // delete a query
-const deleteQuery = async (req, res, next) => {
+const deleteQuery = async (req, res) => {
     try {
         await querymodel.deleteOne({ _id: req.params.id })
        return  res.status(200).send({ status: 200, message:"Qwery deleted successfylly"})

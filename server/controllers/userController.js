@@ -21,7 +21,7 @@ const userLogin =async (req, res) => {
 
 // logout
 const logout = (req, res) => {
-    res.logout();
+    req.logout();
     res.status(500).send({ status: 500, message: "logged out successfully!" });
 }
 // export all the functions

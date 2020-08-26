@@ -64,6 +64,7 @@ describe("testing query", () => {
         // /api/queries
         chai.request(app)
             .get(`/api/user/queries`)
+            .set('Authorization'," ")
             .end((error, response) => {
                 expect(error).to.be.null;
                 expect(response).to.have.status(401);
@@ -79,6 +80,17 @@ describe("testing query", () => {
             .end((error, response) => {
                 expect(error).to.be.null;
                 expect(response).to.have.status(200);
+                done();
+            });
+    })
+    it("should not get one query by Id", (done) => {
+        // /api/queries
+        chai.request(app)
+            .get(`/api/user/queries/${queryId}`)
+            .set('Authorization', " ")
+            .end((error, response) => {
+                expect(error).to.be.null;
+                expect(response).to.have.status(401);
                 done();
             });
     })
