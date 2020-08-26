@@ -18,14 +18,14 @@ const createProfile = (req, res, next) => {
         });
 };
 
-// // find all Profiles
-// const findAllProfiles = (req, res, next) => {
-//     profileModel.find().then((Profiles) => {
-//            return res.status(200).send({ status: 200, message:Profiles })
-//         } ).catch((error)=> {
-//             return res.status(400).send({status:400, error: error});
-//     });
-// }
+// find all Profiles
+const findAllProfiles = (req, res, next) => {
+    profileModel.find().then((Profiles) => {
+           return res.status(200).send({ status: 200, message:Profiles })
+        } ).catch((error)=> {
+            return res.status(400).send({status:400, error: error});
+    });
+}
 
 // update one Profile
 const upDateProfile = (req, res, next) => {
@@ -51,4 +51,4 @@ const deleteProfile = async (req, res, next) => {
         }}
 }
 
-export { createProfile, deleteProfile,  upDateProfile }
+export { createProfile, deleteProfile, findAllProfiles,  upDateProfile }

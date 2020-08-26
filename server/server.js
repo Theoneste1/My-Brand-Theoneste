@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
 import session from "express-session"
-// import blogRouter from "./routes/blogRouter";
+import blogRouter from "./routes/blogRouter";
 import queryRouter from "./routes/queryRouter";
 import userRouter from "./routes/UserRouter";
 import actionOnBlog from "./routes/actionOnBlogRouter"
@@ -13,13 +13,17 @@ import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from './../swagger.json';
 
 
+
+// import passportConfig from "./config/passport"
+// import secureRoute from './routes/secure-route';
 const app = express()
 app.use(express.json());
 dotenv.config();
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-
+// calling the routes of blogs
+app.use("/", blogRouter)
 app.use("/",actionOnBlog)
 app.use("/", queryRouter)
 app.use("/",profileRouter)

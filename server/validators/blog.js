@@ -1,4 +1,5 @@
 import Joi from 'joi';
+import 'regenerator-runtime/runtime'
 const blogValidate = (req, res, next) => {
 
     const schema = Joi.object({
