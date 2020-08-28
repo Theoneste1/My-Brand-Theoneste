@@ -56,10 +56,13 @@ img{
   color: #45474A;
 }
 
+.blog-text:hover{
+  color:red;
+}
+
 .blog-title h1{
   color: #45474A;
 }
-
 
 .action {
   width: 100%;
@@ -88,6 +91,13 @@ img{
 button{
 font-size: 12px;
     padding: 5px 10px 5px 10px;
+    margin: 10px;
+}
+.buttons{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+
 }
 
 

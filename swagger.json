@@ -9,14 +9,14 @@
         },
         "license": {
             "name": "MIT",
-            "url": "https://github.com/Theoneste1/My-Brand-Theoneste"
+            "url": "https://github.com/Theoneste1/My-Brand-Theoneste/blob/develop/README.md"
         }
     },
 
 
-    "host": "localhost:3000",
+    "host": "//my-brand-theoneste.herokuapp.com",
     "basePath": "/",
-    "schemes": ["http"],
+    "schemes": ["https","http"],
     "consumes": ["application/json"],
     "produces": ["application/json"],
     "paths": {
@@ -155,7 +155,7 @@
                         "type": "string", "description": "Admin Token" }
                 ],
                 "responses": {
-                    "200": {
+                    "204": {
                         "description": "blog successfully deleted"
                     },
                     "404": {

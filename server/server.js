@@ -11,11 +11,6 @@ import profileRouter from "./routes/profileRouter"
 
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from './../swagger.json';
-
-
-
-// import passportConfig from "./config/passport"
-// import secureRoute from './routes/secure-route';
 const app = express()
 app.use(express.json());
 dotenv.config();
@@ -47,7 +42,6 @@ mongoose.connect(process.env.DbConnection, {
     }))
 
 
-    // default, router is 8000
     const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => {
         console.log(`server has started ${PORT}`)
@@ -61,6 +55,5 @@ mongoose.connect(process.env.DbConnection, {
 mongoose.connection.on('error', error => console.log(error));
 mongoose.Promise = global.Promise;
 
-// app.use("/", secureRoute)
 
 export default app;
