@@ -1,8 +1,6 @@
 
-
 // getting all the projects
 const allProjects = document.querySelectorAll('.image')
-
 
 // getting the react projects
 const reactProjects = document.querySelectorAll('.react')
@@ -13,7 +11,6 @@ const javascriptProjects = document.querySelectorAll('.javascript')
 
 // ruby projects
 const rubyprojects = document.querySelectorAll('.ruby')
-
 
 // project title
 const projectsTitle = document.querySelectorAll(".all")
@@ -27,8 +24,6 @@ for (i = 1; i < projectsTitle.length; i++) {
     projectsTitle[i].style.color = "#626262";
 }
 
-
-//
 function makeSameBackground() {
     projectsTitle.forEach(title => {
         title.style.backgroundColor = "#F5F5F5";
@@ -36,9 +31,6 @@ function makeSameBackground() {
         title.style.color = "#626262";
     });
 }
-
-
-
 
 function makeClickColor() {
     projectsTitle.forEach(title => {
@@ -61,8 +53,6 @@ function changeColor() {
 
     makeSameBackground()
 }
-
-
 projectsTitle.forEach(title => {
     title.addEventListener('click', () => {
         changeColor();
@@ -91,7 +81,6 @@ projectsTitle.forEach(title => {
             javascriptProjects.forEach(project => {
                 project.style.display = "block";
             })
-
         }
 
         // selecting react projects
@@ -116,8 +105,6 @@ projectsTitle.forEach(title => {
         }
 
         // ruby projects
-
-
         // selecting ruby projects
         else if (title.classList[1] === "rubyprojects") {
             // chenge the background color
@@ -135,8 +122,6 @@ projectsTitle.forEach(title => {
             rubyprojects.forEach(project => {
                 project.style.display = "block";
             })
-
-
         }
         // getting all projects
 
@@ -146,7 +131,6 @@ projectsTitle.forEach(title => {
             title.style.backgroundColor = "#55C1C1";
             title.style.color = "white"
             title.style.textDecoration = "underline"
-
             // show the ruby projects
             reactProjects.forEach(project => {
                 project.style.display = "block";
@@ -159,12 +143,6 @@ projectsTitle.forEach(title => {
             rubyprojects.forEach(project => {
                 project.style.display = "block";
             })
-
-
         }
-
-
-
-
     })
 })

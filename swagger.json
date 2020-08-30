@@ -155,7 +155,7 @@
                         "type": "string", "description": "Admin Token" }
                 ],
                 "responses": {
-                    "200": {
+                    "204": {
                         "description": "blog successfully deleted"
                     },
                     "404": {

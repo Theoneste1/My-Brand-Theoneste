@@ -30,12 +30,9 @@ right: 0;
 z-index: 20;
 }
 
-
  .page-title h1{
    color:#55C1C1;
  }
-
-
 
 /* body section */
 
@@ -95,7 +92,6 @@ z-index: 20;
    cursor: pointer;
  }
 
-
 .project1{
   width: 100%;
   display: flex;
@@ -111,16 +107,14 @@ z-index: 20;
 
 img{
   width: 100%;
-  /* height: 100%; */
   display: block;
   background:#55C1C1;
-  border: solid #45474A 2px;
+  border: solid #45474A 1px;
 }
 
 .image img{
   height: 100px;
 }
-
 .covering {
   position: absolute;
   bottom: 0;
@@ -130,6 +124,7 @@ img{
   overflow: hidden;
   width: 100%;
   border-radius:5px;
+  border:solid black 1px;
   height: 100%;
   transform: scale(0);
   transition: .5s ease;
