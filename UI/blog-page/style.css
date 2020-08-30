@@ -1,12 +1,41 @@
 *{
   margin: 0;
   padding: 0;
+  color:black;
   box-sizing: border-box;
   font-size: 16px;
 }
 
 .page-title h1{
-  color:#45474A;
+  color:black;
+}
+
+.likeButton, .unlikeButton{
+  background:yellow;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+.likeButton p{
+  color:green;
+}
+.unlikeButton p{
+  color:red;
+}
+.fa-thumbs-up{
+  /* font-size: 30px; */
+  color:black;
+  padding: 3px;
+}
+.action{
+  margin-top: 10px;
+  font-size: 25px;
+}
+.action p{
+  margin: 0 10px ;
+}
+.myName p{
+  color:white;
 }
 
 /* body part */
@@ -17,17 +46,62 @@
   justify-content: center;
 }
 .bloged{
-  width: 20%;
+  width: 100%;
   padding:  10px 20px;
   border-radius:5px;
   margin: 5px;
-  background:#adbbc7;
+  /* background:#adbbc7; */
 }
 
+article{
+  flex:1;
+  float: left;
+}
+aside{
+  flex: 3;
+  float: right;
+  flex-direction: row;
+}
 
+label{
+  color: black;
+  font-size: 16px;
+}
+textarea, input{
+  width: 100%;
+  color:black;
+  padding-left: 5px;
+  margin: 5px 0px;
+  border:2px solid black;
+}
+.commentsdivision{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+.commentsdivision
+#commentor{
+  background:white;
+}
+.commentsSection{
+  width: 400px;
+  color:black;
+  border-radius:5px;
+}
+ h2,h1{
+   text-align: center;
+   color:black;
+ }
+
+ .commentDivisionDiv{
+   height: 30px;
+   display: flex;
+   flex-direction: row;
+ }
 .blog-image{
-width: 100%;
-height: 100px;
+width: 200px;
+height: 400px;
 display: flex;
 border-radius:5px;
 border: solid #45474A 1px;
@@ -37,6 +111,7 @@ align-items:center;
 img{
   width: 100%;
   height: 100%;
+  border-radius:5px;
   display: block;
 }
 
@@ -46,7 +121,7 @@ img{
 
 }
 .line1{
-  width: 50%;
+  width: 100%;
   height: 3px;
   margin: 10px 0;
   background:#45474A;
@@ -56,9 +131,6 @@ img{
   color: #45474A;
 }
 
-.blog-text:hover{
-  color:red;
-}
 
 .blog-title h1{
   color: #45474A;
@@ -70,12 +142,12 @@ img{
   align-items:center;
   justify-content: center;
 }
-.action .fa{
+/* .action .fa{
   font-size: 20px;
   color: #45474A;
   text-align: center;
   padding: 10px 20px;
-}
+} */
 .fa:hover{
   color:#E31C6E;
 }

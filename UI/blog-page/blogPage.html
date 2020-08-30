@@ -1,5 +1,6 @@
-<!DOCTYPE html>
+div<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
     <section>
         <div class="container">
@@ -35,14 +37,31 @@
                     <div class="body-section">
                         <div class="bodyContainer">
                             <section class="page-title">
-                                <h1>LATEST BLOGS</h1>
+                                <h1>Read full blog</h1>
                             </section>
-                            <div  class="blogs">
-
-
-
-
+                            <div class="blogs">
+<!-- This is where, one blog will be here -->
                             </div>
+
+                            <!-- comments -->
+                            <div class="commentsdivision">
+                                <div class="commentsSection">
+
+                                    <h2 >Leave a comment please!</h2>
+                                    <div class="commentDivs">
+                                        <!-- <label for="name">Name</label> -->
+                                        <input type="text" id="commentor" placeholder="Name" required>
+                                    </div>
+                                    <div class="commentDivs">
+                                        <textarea  id="comment" cols="5" rows="3" placeholder="Comment" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="commentsdivision">
+                                <button class="btn-bigbtn"  id="commentBtn">comment</button>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -69,7 +88,8 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script type="text/javascript" src="./javascript.js"></script>
+    <script type="text/javascript" src="./blogPage.js"></script>
     <script type="text/javascript" src="../../assets/javascript/javascript.js"></script>
 </body>
+
 </html>

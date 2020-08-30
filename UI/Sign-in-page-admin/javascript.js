@@ -1,67 +1,39 @@
-// javascript for humburger icon
 
-const menuIcons = document.querySelector('.menuIcon');
-const menubar = document.querySelector('header ul')
+// let loginButtonId = document.querySelector('#loginButtonId ')
+let loginButtonConfirm = document.querySelector('#loginBtn')
 
-menubar.addEventListener('click', () => {
 
+
+loginButtonConfirm.addEventListener("click", () => {
+    loginfunction();
+    clearGround();
 })
 
-menuIcons.addEventListener('click', () => {
 
-    menubar.classList.toggle('myClass')
+function loginfunction() {
 
-});
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    console.log(email);
+    console.log(password);
+    axios
+        .post("https://my-brand-theoneste.herokuapp.com/api/user/login", {
+            "email": email,
+            "password":password
+        })
+        .then(res => {
+            localStorage.setItem('authorization', res.data.token);
+            window.location.href = "../blog-page-admin/index.html";
 
-let loginForm = document.querySelector('.loginform')
-let loginButtonId = document.querySelector('#loginButtonId ')
-let loginButton = document.querySelector('#loginBtn')
-let registerForm = document.querySelector('.Registerform')
-let registerButton = document.querySelector('#registerButton')
-let registerButtonId = document.querySelector('#registerButtonId')
-let loginLink = document.querySelector('#loginLink')
-let registerLink = document.querySelector('#RegisterLink')
 
-let formTex=document.querySelector("#form-body")
-loginLink.addEventListener('click', () => {
-    loginbtn();
-    console.log("login");
-})
-
-registerLink.addEventListener('click', () => {
-    registerbtn();
-    console.log("reg");
-})
-
-function loginbtn() {
-    loginButtonId.addEventListener('click', () => {
-        clearGround();
-        loginForm.style.display = "block";
-        loginForm.style.opacity = "0.6";
-        formTex.style.display = "none";
-        loginButtonId.style.backgroundColor = "#09C2C9";
-    })
+        })
+        .catch(err => console.error(err))
 }
-loginbtn()
 
-
-function registerbtn() {
-    registerButtonId.addEventListener('click', () => {
-        clearGround()
-        registerForm.style.display = "block";
-        registerForm.style.opacity = "0.6";
-        registerButtonId.style.backgroundColor = "#09C2C9";
-        formTex.style.display = "none";
-    })
-}
-registerbtn()
 
 
 
 function clearGround() {
-    registerForm.style.display = "none";
-    loginForm.style.display = "none";
-    formTex.style.display = "block";
-    loginButtonId.style.backgroundColor = "#252934";
-    registerButtonId.style.backgroundColor = "#252934";
+    document.getElementById("email").value="";
+    document.getElementById("password").value="";
 }

@@ -6,7 +6,7 @@
 }
 
 body{
-  background-color: #F5F5F5;
+  background-color: #d3e0de;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -18,7 +18,6 @@ body{
    justify-content: center;
    align-items: center;
    margin-bottom: 80px;
-
 }
 .inner-container{
   width:100%;
@@ -85,6 +84,9 @@ header nav ul .myClass{
   width: 100%;
   height: 40px;
 }
+body{
+  color:#45474A ;
+}
 
 /* body section */
 
@@ -115,12 +117,14 @@ header nav ul .myClass{
 .blogs{
   width: 100%;
   display: flex;
+  color: #45474A;
   align-items:center;
   justify-content: center;
 }
 .bloged{
   width: 100%;
   padding:  0 20px;
+  color: #45474A;
   margin: 5px;
 }
 
@@ -140,7 +144,7 @@ img{
 
 .blog-title{
   padding:10px 0;
-  color: #BDBDBD;
+  color: #45474A;
 
 }
 .line1{
@@ -178,10 +182,10 @@ img{
 
 button{
   /* background:#E31C6E; */
-  width: 70px;
+  width: 200px;
   margin: 5px;
-  height: 40px;
-  color:#45474A;
+  height: 50px;
+  color: white;
   border-radius:5px;
   border: 0px;
 }
